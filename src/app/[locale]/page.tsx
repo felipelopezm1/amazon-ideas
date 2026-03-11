@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const portImages: Record<string, string> = {
   leticia: "/images/ports/leticia.jpg",
-  la_pedrera: "/images/ports/la-pedrera.jpg",
+  la_pedrera: "/images/ports/la-pedrera.jpeg",
   manaus: "/images/ports/manaus.jpg",
   belem: "/images/ports/belem.jpg",
 };
@@ -119,13 +119,20 @@ function HomePageContent({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* ── Hero Image (full-bleed) ───────────────────── */}
+      {/* ── Hero Video (full-bleed) ──────────────────── */}
       <section className="px-6">
         <div className="mx-auto max-w-[1200px]">
-          <div
-            className="relative h-[50vh] min-h-[360px] overflow-hidden rounded-2xl bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/hero/amazon-river.jpg')" }}
-          >
+          <div className="relative h-[50vh] min-h-[360px] overflow-hidden rounded-2xl">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
+              className="absolute inset-0 h-full w-full object-cover"
+              src="/images/hero/amazon-river.mp4"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)]/60 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8">
               <p className="text-[0.62rem] font-bold uppercase tracking-[0.3em] text-white/60">

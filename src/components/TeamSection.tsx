@@ -13,21 +13,21 @@ const team = [
     role: "ceo" as const,
     bio: "Creative Technologist & UX/UI specialist. MSc Creative Computing at UAL London. Biomimicry + AI researcher.",
     linkedin: "https://www.linkedin.com/in/felipelopezman/",
-    image: "/images/team/felipe.svg",
+    image: "/images/team/felipe.jpeg",
   },
   {
     name: "Pearl Suchanan",
     role: "cto" as const,
     bio: "Technology strategist and systems architect driving scalable digital infrastructure.",
     linkedin: "https://www.linkedin.com/in/pearlsuchanan/",
-    image: "/images/team/pearl.svg",
+    image: "/images/team/pearl.jpeg",
   },
   {
     name: "Juan G.",
     role: "cso" as const,
     bio: "Computer Engineer & Economist from Manaus. Full-stack dev, Web3 expansion lead, HCI researcher.",
     linkedin: "https://www.linkedin.com/in/junowoz/",
-    image: "/images/team/juan.svg",
+    image: "/images/team/juan.jpeg",
   },
 ] as const;
 
@@ -42,14 +42,14 @@ export default function TeamSection({ title, roles }: Props) {
       <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3">
         {team.map((m) => (
           <article key={m.name} className="group bg-white">
-            <div className="relative flex h-72 items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-pine)] to-[var(--color-canopy)]">
+            <div className="relative h-72 overflow-hidden">
               <Image
                 src={m.image}
                 alt={m.name}
-                width={200}
-                height={200}
-                className="opacity-90"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             <div className="p-6">
               <p className="text-[0.55rem] font-bold uppercase tracking-[0.3em] text-[var(--color-pine)]">
