@@ -6,13 +6,18 @@
     "phase": "Phase 1",
     "title": {
       "en": "Nomad Bio-Pass",
-      "es": "Bio-Pase Nomada",
-      "pt": "Bio-Passe Nomade"
+      "es": "Bio-Pase Nómada",
+      "pt": "Bio-Passe Nômade"
     },
     "summary": {
       "en": "A verified residency credential for low-impact travelers with local contribution tracking.",
       "es": "Credencial de residencia verificada para viajeros de bajo impacto con seguimiento de aportes locales.",
-      "pt": "Credencial de residencia verificada para viajantes de baixo impacto com rastreio de contribuicao local."
+      "pt": "Credencial de residência verificada para viajantes de baixo impacto com rastreio de contribuição local."
+    },
+    "details": {
+      "en": "The Nomad Bio-Pass is a blockchain-verified digital credential that tracks a traveler's ecological footprint and community contributions along the Amazon corridor. Visitors earn reputation through verified actions—volunteering at Chagra Learning Labs, supporting local artisans, or participating in conservation activities. The pass integrates with the Solarpunk Residency Circuit, unlocking access to co-living stations and curated experiences. Local host families and cooperative guides can verify contributions transparently, ensuring tourism revenue flows directly into the communities it impacts.",
+      "es": "El Bio-Pase Nómada es una credencial digital verificada por blockchain que rastrea la huella ecológica y las contribuciones comunitarias del viajero a lo largo del corredor amazónico. Los visitantes ganan reputación a través de acciones verificadas—voluntariado en laboratorios Chagra, apoyo a artesanos locales o participación en actividades de conservación.",
+      "pt": "O Bio-Passe Nômade é uma credencial digital verificada por blockchain que rastreia a pegada ecológica e as contribuições comunitárias do viajante ao longo do corredor amazônico. Visitantes ganham reputação por ações verificadas—voluntariado nos laboratórios Chagra, apoio a artesãos locais ou participação em atividades de conservação."
     }
   },
   {
@@ -23,12 +28,17 @@
     "title": {
       "en": "Chagra Learning Labs",
       "es": "Laboratorios de Aprendizaje Chagra",
-      "pt": "Laboratorios de Aprendizagem Chagra"
+      "pt": "Laboratórios de Aprendizagem Chagra"
     },
     "summary": {
       "en": "Community-led maker labs where indigenous knowledge and AI-assisted training create local jobs.",
-      "es": "Laboratorios liderados por la comunidad donde el conocimiento indigena y la formacion asistida por IA crean empleo local.",
-      "pt": "Laboratorios liderados pela comunidade onde saber indigena e formacao com IA geram empregos locais."
+      "es": "Laboratorios liderados por la comunidad donde el conocimiento indígena y la formación asistida por IA crean empleo local.",
+      "pt": "Laboratórios liderados pela comunidade onde saber indígena e formação com IA geram empregos locais."
+    },
+    "details": {
+      "en": "Chagra Learning Labs are physical maker spaces embedded in Leticia and La Pedrera, designed as modern interpretations of the indigenous chagra—a diverse, cyclical garden. Each lab combines traditional ecological knowledge with digital fabrication, AI-assisted language tools, and creative coding. Local youth learn web development, IoT prototyping, and content creation alongside elders sharing botanical wisdom and craft techniques. The labs serve as talent incubators for all other CHAGRA-NET projects, producing the technicians, guides, and creators who run the corridor's experiences.",
+      "es": "Los Laboratorios Chagra son espacios maker físicos integrados en Leticia y La Pedrera, diseñados como interpretaciones modernas de la chagra indígena—un jardín diverso y cíclico.",
+      "pt": "Os Laboratórios Chagra são espaços maker físicos em Leticia e La Pedrera, projetados como interpretações modernas da chagra indígena—um jardim diverso e cíclico."
     }
   },
   {
@@ -38,13 +48,18 @@
     "phase": "Phase 1",
     "title": {
       "en": "River Signal Mesh",
-      "es": "Malla de Senal Fluvial",
+      "es": "Malla de Señal Fluvial",
       "pt": "Malha de Sinal Fluvial"
     },
     "summary": {
       "en": "Solar-powered micro connectivity nodes for river communities and remote eco-lodges.",
-      "es": "Nodos de microconectividad solar para comunidades riberenas y eco-lodges remotos.",
-      "pt": "Nos de microconectividade solar para comunidades ribeirinhas e eco-lodges remotos."
+      "es": "Nodos de microconectividad solar para comunidades ribereñas y eco-lodges remotos.",
+      "pt": "Nós de microconectividade solar para comunidades ribeirinhas e eco-lodges remotos."
+    },
+    "details": {
+      "en": "The River Signal Mesh deploys solar-powered ESP32 and Raspberry Pi nodes along key river routes between Leticia and La Pedrera, creating a resilient mesh network for communities that currently lack reliable internet. Each node acts as a local hotspot and environmental sensor, feeding weather, humidity (DHT22/BME280), and river level (ultrasonic/pressure sensor) data into the Forest Health IoT Grid and the Living River Digital Twin. The mesh enables nomad residents to work remotely from eco-lodges while giving indigenous communities access to education platforms and telehealth.",
+      "es": "La Malla de Señal Fluvial despliega nodos ESP32 y Raspberry Pi alimentados por energía solar a lo largo de rutas fluviales clave entre Leticia y La Pedrera.",
+      "pt": "A Malha de Sinal Fluvial implanta nós ESP32 e Raspberry Pi alimentados por energia solar ao longo de rotas fluviais chave entre Leticia e La Pedrera."
     }
   },
   {
@@ -55,12 +70,17 @@
     "title": {
       "en": "Forest Health IoT Grid",
       "es": "Red IoT de Salud del Bosque",
-      "pt": "Rede IoT de Saude da Floresta"
+      "pt": "Rede IoT de Saúde da Floresta"
     },
     "summary": {
       "en": "Sensors and AI analysis for biodiversity, water quality, and early-warning conservation actions.",
-      "es": "Sensores y analitica con IA para biodiversidad, calidad del agua y alertas tempranas de conservacion.",
-      "pt": "Sensores e analise com IA para biodiversidade, qualidade da agua e alertas de conservacao."
+      "es": "Sensores y analítica con IA para biodiversidad, calidad del agua y alertas tempranas de conservación.",
+      "pt": "Sensores e análise com IA para biodiversidade, qualidade da água e alertas de conservação."
+    },
+    "details": {
+      "en": "The Forest Health IoT Grid extends the River Signal Mesh with specialized environmental sensors deployed across critical biodiversity zones. IoT gateways (ESP32/Raspberry Pi) collect rain forecast data from OpenWeather and Meteostat APIs, combined with on-site heat, humidity, river level, and acoustic biodiversity readings. AI models process the data streams to detect deforestation signals, predict flooding events, and monitor wildlife corridors. The system feeds directly into the Living River Digital Twin for real-time visualization and drives the Immersive Biofeedback Installation's environmental data layer.",
+      "es": "La Red IoT de Salud del Bosque extiende la Malla de Señal Fluvial con sensores ambientales especializados desplegados en zonas críticas de biodiversidad.",
+      "pt": "A Rede IoT de Saúde da Floresta estende a Malha de Sinal Fluvial com sensores ambientais especializados implantados em zonas críticas de biodiversidade."
     }
   },
   {
@@ -70,13 +90,123 @@
     "phase": "Phase 2",
     "title": {
       "en": "Bioeconomy Market Link",
-      "es": "Enlace de Mercado de Bioeconomia",
-      "pt": "Conexao de Mercado da Bioeconomia"
+      "es": "Enlace de Mercado de Bioeconomía",
+      "pt": "Conexão de Mercado da Bioeconomia"
     },
     "summary": {
       "en": "Transparent marketplace channels for forest products with origin proof and fair-pay contracts.",
       "es": "Canales de mercado transparentes para productos del bosque con prueba de origen y pago justo.",
       "pt": "Canais de mercado transparentes para produtos da floresta com prova de origem e pagamento justo."
+    },
+    "details": {
+      "en": "Bioeconomy Market Link creates a transparent supply chain for Amazon forest products—açaí, Brazil nuts, essential oils, artisanal crafts—with blockchain-verified origin proof and smart contract-based fair-pay agreements. Each product carries an NFC-enabled tag that tells its story: who harvested it, where it grew, and what community benefits from the sale. The platform connects directly with the NFC Amazonian Souvenirs program, turning every purchase into a traceable, story-rich experience that drives revenue back to indigenous cooperatives and family producers.",
+      "es": "El Enlace de Mercado crea una cadena de suministro transparente para productos del bosque amazónico con prueba de origen verificada por blockchain.",
+      "pt": "A Conexão de Mercado cria uma cadeia de suprimentos transparente para produtos da floresta amazônica com prova de origem verificada por blockchain."
+    }
+  },
+  {
+    "id": "immersive-biofeedback-installation",
+    "cities": ["leticia", "manaus", "belem"],
+    "domains": ["hci", "iot", "ai"],
+    "phase": "Phase 2",
+    "title": {
+      "en": "Immersive Biofeedback Installation",
+      "es": "Instalación Inmersiva de Biofeedback",
+      "pt": "Instalação Imersiva de Biofeedback"
+    },
+    "summary": {
+      "en": "A wearable-driven interactive art installation that visualizes real-time Amazon environmental data through visitor biofeedback.",
+      "es": "Instalación artística interactiva impulsada por wearables que visualiza datos ambientales del Amazonas en tiempo real mediante biofeedback del visitante.",
+      "pt": "Instalação artística interativa com wearables que visualiza dados ambientais da Amazônia em tempo real através de biofeedback do visitante."
+    },
+    "details": {
+      "en": "Visitors scan a QR code to open a mobile web app (HTML5 / Web Audio API) and connect a Bluetooth EEG or HRV wearable (Muse, Polar, OpenBCI). Their brainwave and heart rate data streams via a Mobile Data Bridge through WebSocket to a Node.js/Python real-time server. Simultaneously, the Forest Health IoT Grid feeds rain forecast (OpenWeather/Meteostat API), heat and humidity (DHT22/BME280 sensors), and river level (ultrasonic/pressure sensors) through ESP32/Raspberry Pi gateways into the same server. TouchDesigner merges both streams: GPU shaders (TOPs) render the Amazon landscape, particle systems (CHOPs/SOPs) respond to environmental data, audio synthesis (Audio CHOP) creates spatial soundscapes, and projection mapping floods LED walls, pool lighting, and immersive screens. The visitor's perception becomes a new biofeedback input—calm states reveal lush forests; stress reveals deforestation pressure. Adaptable with GenAI for generative visual evolution. Inspired by works like THE DIVINE FERN (AI Generated Interactive Installation).",
+      "es": "Los visitantes escanean un código QR para abrir una web app móvil y conectar un wearable EEG o HRV por Bluetooth. Sus datos de ondas cerebrales y ritmo cardíaco fluyen en tiempo real junto con datos ambientales del IoT hacia TouchDesigner, que genera paisajes inmersivos proyectados en pantallas LED y piscinas de luz.",
+      "pt": "Visitantes escaneiam um QR code para abrir um web app móvel e conectar um wearable EEG ou HRV por Bluetooth. Seus dados de ondas cerebrais e frequência cardíaca fluem em tempo real junto com dados ambientais do IoT para o TouchDesigner, que gera paisagens imersivas projetadas em telas LED e piscinas de luz."
+    }
+  },
+  {
+    "id": "transparent-screen-overlays",
+    "cities": ["leticia", "la_pedrera", "manaus"],
+    "domains": ["hci", "bioeconomy"],
+    "phase": "Phase 2",
+    "title": {
+      "en": "Transparent Screen Nature Overlays",
+      "es": "Pantallas Transparentes de Naturaleza",
+      "pt": "Telas Transparentes de Natureza"
+    },
+    "summary": {
+      "en": "Outdoor installations blending screen projections with real landscapes, using p5.js and TouchDesigner for interactive storytelling.",
+      "es": "Instalaciones al aire libre que mezclan proyecciones digitales con paisajes reales, usando p5.js y TouchDesigner para narrativa interactiva.",
+      "pt": "Instalações ao ar livre que misturam projeções digitais com paisagens reais, usando p5.js e TouchDesigner para narrativa interativa."
+    },
+    "details": {
+      "en": "Transparent Screen Nature Overlays place see-through digital displays along jungle trails, riverbanks, and viewpoints across the corridor. Visitors look through a transparent screen and see the real landscape behind it, augmented with animated layers—species identification, historical indigenous narratives, seasonal data visualizations, or Chiribiquete-inspired rock art animations. The p5.js UI layer handles touch interaction and web-based content while TouchDesigner drives the visual compositing, blending real-time camera feeds with generative graphics. Each screen becomes a 'window into time'—showing how the landscape looked centuries ago, what lives beneath the canopy, or how the river will shift with climate change. Best suited for eco-trail waypoints and cultural heritage sites.",
+      "es": "Las Pantallas Transparentes colocan displays digitales semitransparentes a lo largo de senderos selváticos, riberas y miradores del corredor, mezclando la vista real con capas interactivas animadas.",
+      "pt": "As Telas Transparentes colocam displays digitais semitransparentes ao longo de trilhas na selva, margens de rios e mirantes do corredor, misturando a vista real com camadas interativas animadas."
+    }
+  },
+  {
+    "id": "amazonian-puzzle-game",
+    "cities": ["leticia", "la_pedrera", "manaus", "belem"],
+    "domains": ["hci", "indigenous_partnership"],
+    "phase": "Phase 1",
+    "title": {
+      "en": "Amazonian Puzzle Game",
+      "es": "Juego de Puzzles Amazónico",
+      "pt": "Jogo de Quebra-Cabeças Amazônico"
+    },
+    "summary": {
+      "en": "A tangible interaction game for all ages using physical puzzle tokens with AR markers, projection mapping, and haptic feedback.",
+      "es": "Un juego de interacción tangible para todas las edades con fichas de puzzle con marcadores AR, mapeo por proyección y retroalimentación háptica.",
+      "pt": "Um jogo de interação tangível para todas as idades com fichas de quebra-cabeça com marcadores AR, mapeamento por projeção e feedback háptico."
+    },
+    "details": {
+      "en": "Physical puzzle tokens embedded with AprilTag/ArUco markers sit on a tabletop with rotating rings. An overhead wide-angle camera tracks each token's ID, position, and rotation via OpenCV marker detection, streaming data through WebSocket/OSC (JSON) into TouchDesigner (WebSocket DAT / OSC In CHOP). The system runs an ecosystem simulation and story state machine—each puzzle piece represents an Amazonian species, plant, or community. As players place and rotate tokens, projection mapping illuminates the table with animated ecosystems, spatial sound responds to arrangements, and stepper motors (A4988/TMC driven by Arduino/ESP32) rotate the rings to provide haptic 'push back' when ecosystems fall out of balance. Players of all ages learn about Amazon biodiversity through play, discovering how species interconnect and how human choices affect the forest. The game adapts difficulty and story branches based on player actions.",
+      "es": "Fichas de puzzle con marcadores AprilTag/ArUco sobre una mesa con anillos giratorios. Una cámara cenital rastrea cada pieza mediante OpenCV, y TouchDesigner proyecta ecosistemas animados que responden a las decisiones del jugador.",
+      "pt": "Fichas de quebra-cabeça com marcadores AprilTag/ArUco sobre uma mesa com anéis giratórios. Uma câmera zenital rastreia cada peça via OpenCV, e o TouchDesigner projeta ecossistemas animados que respondem às decisões do jogador."
+    }
+  },
+  {
+    "id": "nfc-amazonian-souvenirs",
+    "cities": ["leticia", "la_pedrera", "manaus", "belem"],
+    "domains": ["web3", "hci", "bioeconomy", "indigenous_partnership"],
+    "phase": "Phase 1",
+    "title": {
+      "en": "NFC Amazonian Souvenirs",
+      "es": "Souvenirs Amazónicos NFC",
+      "pt": "Souvenirs Amazônicos NFC"
+    },
+    "summary": {
+      "en": "Eco-friendly blind box souvenirs with embedded NFC tags that unlock personalized digital experiences and Amazonian scent stories.",
+      "es": "Souvenirs eco-friendly en cajas ciegas con etiquetas NFC que desbloquean experiencias digitales personalizadas e historias de aromas amazónicos.",
+      "pt": "Souvenirs eco-friendly em caixas-surpresa com tags NFC que desbloqueiam experiências digitais personalizadas e histórias de aromas amazônicos."
+    },
+    "details": {
+      "en": "Handcrafted, 100% eco-friendly souvenirs presented as collectible blind boxes—each containing a unique artisanal piece infused with distinct Amazonian scents (copaíba, andiroba, cumaru, açaí). Every piece carries an embedded NFC tag that, when tapped to a phone, authenticates the item and opens a personalized web experience. The digital layer adds a collectible character or story fragment to the visitor's CHAGRA-NET profile, building a narrative as they travel the corridor. Crafted by indigenous artisans in partnership with local cooperatives, each souvenir connects to its maker's story through the Bioeconomy Market Link. The blind box format creates excitement and repeat engagement while the NFC bridge turns a physical memento into a living digital keepsake.",
+      "es": "Souvenirs artesanales 100% eco-friendly presentados como cajas ciegas coleccionables, cada una con una pieza artesanal única impregnada con aromas amazónicos distintivos y una etiqueta NFC que desbloquea experiencias digitales personalizadas.",
+      "pt": "Souvenirs artesanais 100% eco-friendly apresentados como caixas-surpresa colecionáveis, cada uma com uma peça artesanal única impregnada com aromas amazônicos distintos e uma tag NFC que desbloqueia experiências digitais personalizadas."
+    }
+  },
+  {
+    "id": "cultural-tech-workshops",
+    "cities": ["leticia", "la_pedrera"],
+    "domains": ["hci", "ai", "indigenous_partnership"],
+    "phase": "Phase 1",
+    "title": {
+      "en": "Cultural Tech Workshops",
+      "es": "Talleres Culturales Tecnológicos",
+      "pt": "Oficinas Culturais Tecnológicas"
+    },
+    "summary": {
+      "en": "Immersive workshops blending Amazonian traditions with creative technology—açaí making, Chiribiquete art scanning, and Ticuna dance performances.",
+      "es": "Talleres inmersivos que mezclan tradiciones amazónicas con tecnología creativa—preparación de açaí, escaneo de arte Chiribiquete y danzas Ticuna.",
+      "pt": "Oficinas imersivas que misturam tradições amazônicas com tecnologia criativa—preparo de açaí, escaneamento de arte Chiribiquete e danças Ticuna."
+    },
+    "details": {
+      "en": "A series of rotating workshops where visitors earn stamps as they participate, building a personal trail through Amazonian culture. The Açaí Workshop combines food preparation with immersive storytelling—visitors learn the harvest-to-bowl process while interactive projections narrate the açaí palm's role in the forest ecosystem. The Chiribiquete Drawing Workshop invites visitors to create their own interpretations of the ancient rock paintings from Serranía de Chiribiquete, then uses image processing and AI to 'translate' their symbols, revealing connections to the 20,000-year-old originals. The Ticuna Performance uses TouchDesigner to create real-time visual accompaniment to traditional dance, with AI-powered auto-translation sharing cultural context across languages. Each workshop blends the physical and digital, creating shareable moments that feed into the visitor's NFC souvenir collection.",
+      "es": "Una serie de talleres rotativos donde los visitantes ganan sellos a medida que participan. El taller de açaí combina gastronomía con narrativa inmersiva, el de Chiribiquete invita a interpretar pinturas rupestres con procesamiento de imágenes, y las danzas Ticuna usan TouchDesigner y traducción con IA.",
+      "pt": "Uma série de oficinas rotativas onde visitantes ganham selos à medida que participam. A oficina de açaí combina gastronomia com narrativa imersiva, a de Chiribiquete convida a interpretar pinturas rupestres com processamento de imagens, e as danças Ticuna usam TouchDesigner e tradução com IA."
     }
   },
   {
@@ -86,13 +216,18 @@
     "phase": "Phase 3",
     "title": {
       "en": "Living River Digital Twin",
-      "es": "Gemelo Digital del Rio Vivo",
-      "pt": "Gemeo Digital do Rio Vivo"
+      "es": "Gemelo Digital del Río Vivo",
+      "pt": "Gêmeo Digital do Rio Vivo"
     },
     "summary": {
       "en": "A visual command center showing mobility, climate, tourism flow, and ecosystem pressure in real time.",
-      "es": "Centro visual de control que muestra movilidad, clima, flujo turistico y presion ecosistemica en tiempo real.",
-      "pt": "Centro visual de comando mostrando mobilidade, clima, fluxo turistico e pressao ecossistemica em tempo real."
+      "es": "Centro visual de control que muestra movilidad, clima, flujo turístico y presión ecosistémica en tiempo real.",
+      "pt": "Centro visual de comando mostrando mobilidade, clima, fluxo turístico e pressão ecossistêmica em tempo real."
+    },
+    "details": {
+      "en": "The Living River Digital Twin aggregates every data stream in the CHAGRA-NET ecosystem into a single, stunning real-time visualization. Environmental sensors from the Forest Health IoT Grid, visitor flow from the Nomad Bio-Pass, economic activity from the Bioeconomy Market Link, and biofeedback from the Immersive Installation all converge into a 3D digital twin of the Amazon corridor. The system uses AI to predict flooding, track deforestation in real time, and optimize tourism distribution across the four ports. Displayed on large-format screens in Manaus and Belém, it serves both as an operational command center for corridor management and as a public art piece that makes the Amazon's invisible systems visible.",
+      "es": "El Gemelo Digital del Río Vivo agrega todos los flujos de datos del ecosistema CHAGRA-NET en una visualización en tiempo real impresionante que sirve como centro operativo y pieza de arte público.",
+      "pt": "O Gêmeo Digital do Rio Vivo agrega todos os fluxos de dados do ecossistema CHAGRA-NET em uma visualização em tempo real impressionante que serve como centro operacional e peça de arte pública."
     }
   },
   {
@@ -102,13 +237,18 @@
     "phase": "Phase 3",
     "title": {
       "en": "Community Impact Treasury",
-      "es": "Tesoreria de Impacto Comunitario",
-      "pt": "Tesouraria de Impacto Comunitario"
+      "es": "Tesorería de Impacto Comunitario",
+      "pt": "Tesouraria de Impacto Comunitário"
     },
     "summary": {
       "en": "A shared governance fund where tourism revenue supports education, internet access, and local enterprise.",
-      "es": "Fondo de gobernanza compartida donde los ingresos del turismo financian educacion, internet y emprendimiento local.",
-      "pt": "Fundo de governanca compartilhada onde a receita do turismo financia educacao, internet e empreendedorismo local."
+      "es": "Fondo de gobernanza compartida donde los ingresos del turismo financian educación, internet y emprendimiento local.",
+      "pt": "Fundo de governança compartilhada onde a receita do turismo financia educação, internet e empreendedorismo local."
+    },
+    "details": {
+      "en": "The Community Impact Treasury is a decentralized governance fund that automatically allocates a percentage of every transaction in the CHAGRA-NET ecosystem—Nomad Bio-Pass fees, NFC souvenir sales, workshop bookings, Bioeconomy Market Link commissions—into community-directed pools. Token holders (local families, cooperatives, indigenous councils) vote on fund allocation: internet infrastructure, school supplies, healthcare transport, or micro-enterprise grants. Smart contracts ensure transparency and prevent extraction. The treasury transforms tourism from a seasonal cash injection into a sustainable, community-controlled development engine.",
+      "es": "La Tesorería de Impacto Comunitario es un fondo de gobernanza descentralizada que asigna automáticamente un porcentaje de cada transacción en el ecosistema CHAGRA-NET a fondos dirigidos por la comunidad.",
+      "pt": "A Tesouraria de Impacto Comunitário é um fundo de governança descentralizada que aloca automaticamente uma porcentagem de cada transação no ecossistema CHAGRA-NET para fundos dirigidos pela comunidade."
     }
   },
   {
@@ -119,12 +259,17 @@
     "title": {
       "en": "Solarpunk Residency Circuit",
       "es": "Circuito de Residencias Solarpunk",
-      "pt": "Circuito de Residencias Solarpunk"
+      "pt": "Circuito de Residências Solarpunk"
     },
     "summary": {
       "en": "A seasonal route of co-living and co-working stations tied to local host families and cooperative guides.",
-      "es": "Ruta estacional de estaciones de co-living y co-working conectadas con familias anfitrionas y guias cooperativos.",
-      "pt": "Rota sazonal de estacoes de co-living e co-working conectadas a familias anfitrias e guias cooperativos."
+      "es": "Ruta estacional de estaciones de co-living y co-working conectadas con familias anfitrionas y guías cooperativos.",
+      "pt": "Rota sazonal de estações de co-living e co-working conectadas a famílias anfitriãs e guias cooperativos."
+    },
+    "details": {
+      "en": "The Solarpunk Residency Circuit is the connective tissue of the entire corridor—a curated seasonal route linking co-living and co-working stations across Leticia, La Pedrera, Manaus, and Belém. Each station is embedded within a local community, operated by host families and cooperative guides trained through Chagra Learning Labs. Residents (digital nomads, researchers, artists) commit to 1-12 month stays, contributing skills to local projects while accessing River Signal Mesh connectivity. The circuit includes the Cultural Tech Workshops, Amazonian Puzzle Games, and Immersive Installations as core experiences. The Nomad Bio-Pass tracks contributions and the NFC Souvenirs create lasting connections between residents and the places they inhabit.",
+      "es": "El Circuito de Residencias Solarpunk es el tejido conectivo del corredor—una ruta estacional curada que vincula estaciones de co-living y co-working en las cuatro ciudades.",
+      "pt": "O Circuito de Residências Solarpunk é o tecido conectivo do corredor—uma rota sazonal curada que vincula estações de co-living e co-working nas quatro cidades."
     }
   }
 ]

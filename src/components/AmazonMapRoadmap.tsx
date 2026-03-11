@@ -32,6 +32,7 @@ type Idea = {
   phase: string;
   title: Record<string, string>;
   summary: Record<string, string>;
+  details?: Record<string, string>;
 };
 
 type Props = {

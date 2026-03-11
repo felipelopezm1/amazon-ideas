@@ -10,6 +10,7 @@ type Idea = {
   phase: string;
   title: Record<string, string>;
   summary: Record<string, string>;
+  details?: Record<string, string>;
 };
 
 type FilterLabels = {
@@ -47,7 +48,7 @@ const PLACEHOLDER_IMAGES = [
   "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
 ];
 
-const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+const FALLBACK_DETAILS = "More details coming soon. This project is currently being developed as part of the CHAGRA-NET corridor initiative.";
 
 export default function IdeasGrid({ title, subtitle, ideas, locale, filters, selectedCity }: Props) {
   const [activeFilter, setActiveFilter] = useState<keyof FilterLabels>("all");
@@ -194,7 +195,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
                     Details
                   </p>
                   <p className="text-[0.88rem] leading-[1.8] text-white/40">
-                    {LOREM}
+                    {selectedIdea.details?.[locale] || FALLBACK_DETAILS}
                   </p>
                 </div>
 
