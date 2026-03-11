@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+:root {
+  --color-pine: #2a6666;
+  --color-jungle: #3a706a;
+  --color-canopy: #5d8874;
+  --color-moss: #709078;
+  --color-sage: #90a180;
+  --color-earth: #bdaf7f;
+  --color-sand: #e9bd7d;
+  --color-gold: #fed583;
+  --color-cream: #ffe499;
+  --color-sun: #fef0af;
+  --color-text-primary: #1a2b28;
+  --color-text-secondary: #5a7a74;
+  --color-dark: #0c1c19;
+  --color-border: rgba(42, 102, 102, 0.08);
+  --background: #faf8f4;
+  --foreground: var(--color-text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-pine);
+  color: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sora), sans-serif;
+}
+
+.hero-title {
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.section-heading {
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.section-heading em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.body-lg {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 36rem;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  border: none;
+  margin: 0;
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: #fff;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(28, 61, 54, 0.08);
+}
+
+.dark-section {
+  background: var(--color-dark);
+  color: #e4ede9;
+}
+
+.dark-card {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: var(--color-pine);
+  color: #fff;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1e4f4f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(42, 102, 102, 0.25);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-primary);
+  padding: 0.85rem 1.8rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-pine);
+  color: var(--color-pine);
+  transform: translateY(-2px);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(2); }
+}
+
+.pulse-dot {
+  animation: pulse-glow 2.8s ease-in-out infinite;
+}
+
+/* ── Leaflet base ── */
+
+.leaflet-container {
+  background: var(--color-dark) !important;
+  border-radius: 1rem;
+}
+
+.leaflet-tile-pane {
+  filter: saturate(0.25) brightness(0.4) hue-rotate(130deg);
+}
+
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* ── Route segment: drawing animation ── */
+
+.route-draw {
+  stroke-dashoffset: 600;
+  animation: route-draw-in 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+             route-flow 1.6s linear infinite 1.8s;
+}
+
+@keyframes route-draw-in {
+  from { stroke-dashoffset: 600; opacity: 0.3; }
+  to   { stroke-dashoffset: 0; opacity: 0.8; }
+}
+
+/* ── Route segment: already-drawn, flowing pulse ── */
+
+.route-pulse {
+  animation: route-flow 1.6s linear infinite, route-glow 3s ease-in-out infinite;
+}
+
+@keyframes route-flow {
+  from { stroke-dashoffset: 32; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes route-glow {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.85; }
+}
+
+/* ── City dot: active (pulsing glow) ── */
+
+.dot-active {
+  filter: drop-shadow(0 0 6px rgba(254, 213, 131, 0.8));
+  animation: dot-breathe 1.6s ease-in-out infinite;
+}
+
+@keyframes dot-breathe {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(254, 213, 131, 0.6));
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(254, 213, 131, 1));
+    opacity: 0.85;
+  }
+}
+
+/* ── City dot: reached (soft glow) ── */
+
+.dot-reached {
+  filter: drop-shadow(0 0 4px rgba(254, 213, 131, 0.35));
+}
+
+/* ── City dot: dim (not yet reached) ── */
+
+.dot-dim {
+  opacity: 0.35;
+}
+
+/* ── Scroll trail (side progress indicator) ── */
+
+.trail-track {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-gold) 0px,
+    var(--color-gold) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+  opacity: 0.06;
+}
+
+.trail-fill {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-gold) 0px,
+    var(--color-gold) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+  opacity: 0.35;
+  transition: height 0.15s ease-out;
+}
+
+/* ── Decorative trail lines between sections ── */
+
+.trail-path-flow {
+  animation: trail-dash-flow 2s linear infinite;
+}
+
+.trail-path-flow-slow {
+  animation: trail-dash-flow 3.5s linear infinite;
+}
+
+@keyframes trail-dash-flow {
+  from { stroke-dashoffset: 28; }
+  to   { stroke-dashoffset: 0; }
+}

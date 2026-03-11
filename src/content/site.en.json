@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "title": "Project CHAGRA-NET",
+    "description": "Solarpunk ecotourism platform connecting digital nomads, indigenous communities, and regenerative Amazon development across Colombia and Brazil."
+  },
+  "nav": {
+    "languageLabel": "Language",
+    "cta": "Join the Network"
+  },
+  "hero": {
+    "eyebrow": "Amazon Ecotourism + Digital Nomad Futures",
+    "title": "Project CHAGRA-NET",
+    "subtitle": "A solarpunk living corridor for ethical nomadism, indigenous collaboration, and regenerative innovation across Leticia, La Pedrera, Manaus, and Belem.",
+    "primaryCta": "Explore Roadmap",
+    "secondaryCta": "View Idea Bank"
+  },
+  "why": {
+    "title": "Why this matters now",
+    "points": [
+      "Build real jobs with and for indigenous communities through co-owned projects.",
+      "Turn reliable connectivity into long-stay opportunities for mission-driven residents.",
+      "Apply biomimicry and chagra principles to resilient, local-first development."
+    ]
+  },
+  "ports": {
+    "title": "Core Amazon Ports",
+    "items": [
+      {
+        "id": "leticia",
+        "name": "Leticia, Colombia",
+        "focus": "Cross-border gateway for regenerative tourism, education, and startup pilots."
+      },
+      {
+        "id": "la_pedrera",
+        "name": "La Pedrera, Colombia",
+        "focus": "Low-impact remote innovation hub tied to biodiversity stewardship."
+      },
+      {
+        "id": "manaus",
+        "name": "Manaus, Brazil",
+        "focus": "Scale point for logistics, digital infrastructure, and impact partnerships."
+      },
+      {
+        "id": "belem",
+        "name": "Belem do Para, Brazil",
+        "focus": "Atlantic connector for climate innovation, culture, and market access."
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Interactive Roadmap",
+    "instructions": "Hover or focus a city point to view local opportunities and phased projects.",
+    "phaseLabel": "Current phase",
+    "allIdeasTitle": "All ideas below",
+    "cityCards": {
+      "leticia": {
+        "challenge": "Bridge seasonal tourism with stable income for families and young creators.",
+        "opportunity": "Pilot nomad residency circuits with local guide guilds and digital learning labs.",
+        "phase": "Phase 1"
+      },
+      "la_pedrera": {
+        "challenge": "Improve access to connectivity and durable income without ecological pressure.",
+        "opportunity": "Deploy mesh-ready micro-connectivity and community-led conservation work.",
+        "phase": "Phase 1"
+      },
+      "manaus": {
+        "challenge": "Connect innovation ecosystems with forest-positive projects in frontier towns.",
+        "opportunity": "Scale training, IoT monitoring, and tokenized impact verification systems.",
+        "phase": "Phase 2"
+      },
+      "belem": {
+        "challenge": "Translate Amazon value chains into fair, global visibility and commercial access.",
+        "opportunity": "Launch bio-economy marketplace channels and climate storytelling labs.",
+        "phase": "Phase 3"
+      }
+    }
+  },
+  "ideas": {
+    "title": "Idea Bank",
+    "subtitle": "A living portfolio of projects that combine bio-economy, AI, IoT, Web3, and human-centered interfaces.",
+    "filters": {
+      "all": "All domains",
+      "bioeconomy": "Bio-economy",
+      "ai": "AI",
+      "iot": "IoT",
+      "web3": "Web3",
+      "hci": "HCI",
+      "indigenous_partnership": "Indigenous partnership",
+      "connectivity": "Connectivity"
+    }
+  },
+  "chagra": {
+    "title": "Biomimicry x Chagra Framework",
+    "body": "The indigenous chagra teaches diversity, cyclical productivity, and care over extraction. CHAGRA-NET translates these principles into digital and physical systems: mixed-value ecosystems, shared governance, and regeneration as a metric of success."
+  },
+  "team": {
+    "title": "Meet the Team",
+    "roles": {
+      "ceo": "CEO",
+      "cto": "CTO",
+      "cso": "CSO"
+    }
+  },
+  "cta": {
+    "title": "Build the Amazon solarpunk corridor together",
+    "body": "We are opening collaborations for community organizations, residents, research institutions, and mission-aligned partners.",
+    "primary": "Become a Partner",
+    "secondary": "Apply as Resident"
+  }
+}

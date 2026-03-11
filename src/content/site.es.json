@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "title": "Proyecto CHAGRA-NET",
+    "description": "Plataforma de ecoturismo solarpunk que conecta nomadas digitales, comunidades indigenas y desarrollo regenerativo en la Amazonia de Colombia y Brasil."
+  },
+  "nav": {
+    "languageLabel": "Idioma",
+    "cta": "Unirme a la Red"
+  },
+  "hero": {
+    "eyebrow": "Ecoturismo Amazonico + Futuro Nomada Digital",
+    "title": "Proyecto CHAGRA-NET",
+    "subtitle": "Un corredor vivo solarpunk para nomadismo etico, colaboracion indigena e innovacion regenerativa en Leticia, La Pedrera, Manaus y Belem.",
+    "primaryCta": "Explorar Hoja de Ruta",
+    "secondaryCta": "Ver Banco de Ideas"
+  },
+  "why": {
+    "title": "Por que importa ahora",
+    "points": [
+      "Crear empleo real con y para comunidades indigenas mediante proyectos co-creados.",
+      "Convertir la conectividad confiable en oportunidades de larga estancia para residentes con proposito.",
+      "Aplicar biomimetica y principios de chagra a un desarrollo resiliente y local."
+    ]
+  },
+  "ports": {
+    "title": "Puertos Amazonicos Clave",
+    "items": [
+      {
+        "id": "leticia",
+        "name": "Leticia, Colombia",
+        "focus": "Puerta transfronteriza para turismo regenerativo, educacion y pilotos de startups."
+      },
+      {
+        "id": "la_pedrera",
+        "name": "La Pedrera, Colombia",
+        "focus": "Nodo remoto de innovacion de bajo impacto vinculado al cuidado de la biodiversidad."
+      },
+      {
+        "id": "manaus",
+        "name": "Manaus, Brasil",
+        "focus": "Punto de escala para logistica, infraestructura digital y alianzas de impacto."
+      },
+      {
+        "id": "belem",
+        "name": "Belem do Para, Brasil",
+        "focus": "Conector atlantico para innovacion climatica, cultura y acceso a mercados."
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Hoja de Ruta Interactiva",
+    "instructions": "Pasa el cursor o usa foco en un punto para ver oportunidades locales y proyectos por fase.",
+    "phaseLabel": "Fase actual",
+    "allIdeasTitle": "Todas las ideas abajo",
+    "cityCards": {
+      "leticia": {
+        "challenge": "Conectar turismo estacional con ingresos estables para familias y jovenes creadores.",
+        "opportunity": "Pilotear circuitos de residencia nomada con gremios de guias locales y laboratorios digitales.",
+        "phase": "Fase 1"
+      },
+      "la_pedrera": {
+        "challenge": "Mejorar conectividad e ingresos duraderos sin presion ecologica.",
+        "opportunity": "Desplegar microconectividad tipo mesh y trabajo de conservacion liderado por comunidad.",
+        "phase": "Fase 1"
+      },
+      "manaus": {
+        "challenge": "Conectar ecosistemas de innovacion con proyectos forestales positivos en ciudades frontera.",
+        "opportunity": "Escalar formacion, monitoreo IoT y verificacion tokenizada de impacto.",
+        "phase": "Fase 2"
+      },
+      "belem": {
+        "challenge": "Traducir cadenas de bioeconomia en visibilidad global justa y acceso comercial.",
+        "opportunity": "Lanzar canales de mercado bioeconomico y laboratorios de narrativa climatica.",
+        "phase": "Fase 3"
+      }
+    }
+  },
+  "ideas": {
+    "title": "Banco de Ideas",
+    "subtitle": "Un portafolio vivo de proyectos que mezclan bioeconomia, IA, IoT, Web3 e interfaces centradas en personas.",
+    "filters": {
+      "all": "Todos los dominios",
+      "bioeconomy": "Bioeconomia",
+      "ai": "IA",
+      "iot": "IoT",
+      "web3": "Web3",
+      "hci": "HCI",
+      "indigenous_partnership": "Alianza indigena",
+      "connectivity": "Conectividad"
+    }
+  },
+  "chagra": {
+    "title": "Marco Biomimetica x Chagra",
+    "body": "La chagra indigena ensena diversidad, productividad ciclica y cuidado sobre extraccion. CHAGRA-NET traduce estos principios en sistemas digitales y fisicos: ecosistemas de valor mixto, gobernanza compartida y regeneracion como metrica de exito."
+  },
+  "team": {
+    "title": "Conoce al Equipo",
+    "roles": {
+      "ceo": "CEO",
+      "cto": "CTO",
+      "cso": "CSO"
+    }
+  },
+  "cta": {
+    "title": "Construyamos juntos el corredor solarpunk amazonico",
+    "body": "Abrimos colaboraciones para organizaciones comunitarias, residentes, instituciones de investigacion y aliados de impacto.",
+    "primary": "Ser aliado",
+    "secondary": "Aplicar como residente"
+  }
+}

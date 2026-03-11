@@ -1,0 +1,130 @@
+[
+  {
+    "id": "nomad-bio-pass",
+    "cities": ["leticia", "manaus", "belem"],
+    "domains": ["web3", "hci", "connectivity"],
+    "phase": "Phase 1",
+    "title": {
+      "en": "Nomad Bio-Pass",
+      "es": "Bio-Pase Nomada",
+      "pt": "Bio-Passe Nomade"
+    },
+    "summary": {
+      "en": "A verified residency credential for low-impact travelers with local contribution tracking.",
+      "es": "Credencial de residencia verificada para viajeros de bajo impacto con seguimiento de aportes locales.",
+      "pt": "Credencial de residencia verificada para viajantes de baixo impacto com rastreio de contribuicao local."
+    }
+  },
+  {
+    "id": "chagra-learning-labs",
+    "cities": ["leticia", "la_pedrera"],
+    "domains": ["ai", "hci", "indigenous_partnership"],
+    "phase": "Phase 1",
+    "title": {
+      "en": "Chagra Learning Labs",
+      "es": "Laboratorios de Aprendizaje Chagra",
+      "pt": "Laboratorios de Aprendizagem Chagra"
+    },
+    "summary": {
+      "en": "Community-led maker labs where indigenous knowledge and AI-assisted training create local jobs.",
+      "es": "Laboratorios liderados por la comunidad donde el conocimiento indigena y la formacion asistida por IA crean empleo local.",
+      "pt": "Laboratorios liderados pela comunidade onde saber indigena e formacao com IA geram empregos locais."
+    }
+  },
+  {
+    "id": "river-signal-mesh",
+    "cities": ["la_pedrera", "leticia"],
+    "domains": ["iot", "connectivity", "bioeconomy"],
+    "phase": "Phase 1",
+    "title": {
+      "en": "River Signal Mesh",
+      "es": "Malla de Senal Fluvial",
+      "pt": "Malha de Sinal Fluvial"
+    },
+    "summary": {
+      "en": "Solar-powered micro connectivity nodes for river communities and remote eco-lodges.",
+      "es": "Nodos de microconectividad solar para comunidades riberenas y eco-lodges remotos.",
+      "pt": "Nos de microconectividade solar para comunidades ribeirinhas e eco-lodges remotos."
+    }
+  },
+  {
+    "id": "forest-health-iot",
+    "cities": ["manaus", "la_pedrera"],
+    "domains": ["iot", "ai", "bioeconomy"],
+    "phase": "Phase 2",
+    "title": {
+      "en": "Forest Health IoT Grid",
+      "es": "Red IoT de Salud del Bosque",
+      "pt": "Rede IoT de Saude da Floresta"
+    },
+    "summary": {
+      "en": "Sensors and AI analysis for biodiversity, water quality, and early-warning conservation actions.",
+      "es": "Sensores y analitica con IA para biodiversidad, calidad del agua y alertas tempranas de conservacion.",
+      "pt": "Sensores e analise com IA para biodiversidade, qualidade da agua e alertas de conservacao."
+    }
+  },
+  {
+    "id": "bioeconomy-market-link",
+    "cities": ["belem", "manaus", "leticia"],
+    "domains": ["bioeconomy", "web3", "indigenous_partnership"],
+    "phase": "Phase 2",
+    "title": {
+      "en": "Bioeconomy Market Link",
+      "es": "Enlace de Mercado de Bioeconomia",
+      "pt": "Conexao de Mercado da Bioeconomia"
+    },
+    "summary": {
+      "en": "Transparent marketplace channels for forest products with origin proof and fair-pay contracts.",
+      "es": "Canales de mercado transparentes para productos del bosque con prueba de origen y pago justo.",
+      "pt": "Canais de mercado transparentes para produtos da floresta com prova de origem e pagamento justo."
+    }
+  },
+  {
+    "id": "living-river-twin",
+    "cities": ["manaus", "belem"],
+    "domains": ["ai", "iot", "hci"],
+    "phase": "Phase 3",
+    "title": {
+      "en": "Living River Digital Twin",
+      "es": "Gemelo Digital del Rio Vivo",
+      "pt": "Gemeo Digital do Rio Vivo"
+    },
+    "summary": {
+      "en": "A visual command center showing mobility, climate, tourism flow, and ecosystem pressure in real time.",
+      "es": "Centro visual de control que muestra movilidad, clima, flujo turistico y presion ecosistemica en tiempo real.",
+      "pt": "Centro visual de comando mostrando mobilidade, clima, fluxo turistico e pressao ecossistemica em tempo real."
+    }
+  },
+  {
+    "id": "impact-treasury",
+    "cities": ["belem", "leticia", "manaus"],
+    "domains": ["web3", "indigenous_partnership", "bioeconomy"],
+    "phase": "Phase 3",
+    "title": {
+      "en": "Community Impact Treasury",
+      "es": "Tesoreria de Impacto Comunitario",
+      "pt": "Tesouraria de Impacto Comunitario"
+    },
+    "summary": {
+      "en": "A shared governance fund where tourism revenue supports education, internet access, and local enterprise.",
+      "es": "Fondo de gobernanza compartida donde los ingresos del turismo financian educacion, internet y emprendimiento local.",
+      "pt": "Fundo de governanca compartilhada onde a receita do turismo financia educacao, internet e empreendedorismo local."
+    }
+  },
+  {
+    "id": "solarpunk-residency-circuit",
+    "cities": ["leticia", "la_pedrera", "manaus", "belem"],
+    "domains": ["hci", "connectivity", "bioeconomy"],
+    "phase": "Phase 2",
+    "title": {
+      "en": "Solarpunk Residency Circuit",
+      "es": "Circuito de Residencias Solarpunk",
+      "pt": "Circuito de Residencias Solarpunk"
+    },
+    "summary": {
+      "en": "A seasonal route of co-living and co-working stations tied to local host families and cooperative guides.",
+      "es": "Ruta estacional de estaciones de co-living y co-working conectadas con familias anfitrionas y guias cooperativos.",
+      "pt": "Rota sazonal de estacoes de co-living e co-working conectadas a familias anfitrias e guias cooperativos."
+    }
+  }
+]
