@@ -6,6 +6,7 @@ import RoadmapIdeasSection from "@/components/RoadmapIdeasSection";
 import TeamSection from "@/components/TeamSection";
 import CTASection from "@/components/CTASection";
 import ScrollTrail from "@/components/ScrollTrail";
+import PartnersCarousel from "@/components/PartnersCarousel";
 import ideas from "@/content/ideas.json";
 import { getCopy, isLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -239,6 +240,9 @@ function HomePageContent({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      {/* ── Partners Carousel ─────────────────────────── */}
+      <PartnersCarousel />
 
       <TrailDecoration variant={2} />
 

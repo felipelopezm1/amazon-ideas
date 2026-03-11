@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Project CHAGRA-NET",
   description:
     "Solarpunk ecotourism and digital nomad corridor for regenerative Amazon development across Colombia and Brazil.",
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({

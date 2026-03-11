@@ -290,3 +290,19 @@ h1, h2, h3, h4 {
   from { stroke-dashoffset: 28; }
   to   { stroke-dashoffset: 0; }
 }
+
+/* ── Partners infinite scroll carousel ── */
+
+.partners-track {
+  animation: partners-scroll 30s linear infinite;
+  width: max-content;
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes partners-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
