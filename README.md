@@ -27,8 +27,8 @@ Solarpunk trilingual landing and strategy microsite for an Amazon ecotourism + d
 
 ## Content Files
 
-- `src/content/site.en.json`
 - `src/content/site.es.json`
+- `src/content/site.en.json`
 - `src/content/site.pt.json`
 - `src/content/ideas.json`
 
