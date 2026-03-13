@@ -29,11 +29,8 @@ export default function CTASection({
   };
 
   const closeModal = () => {
-    if (transition) {
-      transition.playOut(() => setModal(null));
-    } else {
-      setModal(null);
-    }
+    setModal(null);
+    transition?.playOut();
   };
 
   return (
@@ -42,7 +39,7 @@ export default function CTASection({
         <div className="pointer-events-none absolute -right-32 -top-32 h-[400px] w-[400px] rounded-full bg-[var(--color-pine)] opacity-20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-[250px] w-[250px] rounded-full bg-[var(--color-gold)] opacity-15 blur-[80px]" />
 
-        {/* Decorative dotted accent lines */}
+        {/* Decorative dotted accent lines — thick white */}
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
           preserveAspectRatio="none"
@@ -51,20 +48,20 @@ export default function CTASection({
         >
           <path
             d="M -5 75 C 20 70, 35 85, 55 72 C 75 60, 90 78, 105 65"
-            stroke="var(--color-pine)"
-            strokeWidth="0.15"
+            stroke="white"
+            strokeWidth="0.5"
             strokeDasharray="1.2 0.8"
             strokeLinecap="round"
-            opacity="0.2"
+            opacity="0.6"
             className="trail-path-flow"
           />
           <path
             d="M -5 25 C 15 32, 40 15, 60 28 C 80 40, 95 22, 105 30"
-            stroke="var(--color-pine)"
-            strokeWidth="0.1"
+            stroke="white"
+            strokeWidth="0.4"
             strokeDasharray="1 0.8"
             strokeLinecap="round"
-            opacity="0.12"
+            opacity="0.5"
             className="trail-path-flow-slow"
           />
         </svg>

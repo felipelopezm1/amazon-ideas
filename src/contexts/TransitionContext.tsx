@@ -39,7 +39,14 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
         repeat: 1,
         yoyo: true,
         ease: "power2.inOut",
-        onComplete: i === shuffled.length - 1 ? onComplete : undefined,
+        onComplete:
+          i === shuffled.length - 1
+            ? () => {
+                (grid as HTMLElement).style.pointerEvents = "none";
+                (grid as HTMLElement).style.zIndex = "0";
+                onComplete?.();
+              }
+            : undefined,
       });
     });
   }, []);

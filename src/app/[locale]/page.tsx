@@ -10,8 +10,6 @@ import PartnersCarousel from "@/components/PartnersCarousel";
 import NavClock from "@/components/NavClock";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import FooterParallax from "@/components/FooterParallax";
-import ContactSection from "@/components/ContactSection";
-import ContactListAnimations from "@/components/ContactListAnimations";
 import HeroTitleAnimation from "@/components/HeroTitleAnimation";
 import ideas from "@/content/ideas.json";
 import { getCopy, isLocale, locales, type Locale } from "@/lib/i18n";
@@ -281,9 +279,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
         secondaryLabel={c.cta.secondary}
       />
 
-      {/* ── Contact (deadspace-style + gap animation) ── */}
-      <ContactSection />
-      <ContactListAnimations />
+      {/* ── Contact section removed for now ── */}
 
       {/* ── Footer (deadspace-style parallax) ───────────── */}
       <footer className="border-t border-white/5">
