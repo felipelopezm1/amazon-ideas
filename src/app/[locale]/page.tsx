@@ -7,6 +7,12 @@ import TeamSection from "@/components/TeamSection";
 import CTASection from "@/components/CTASection";
 import ScrollTrail from "@/components/ScrollTrail";
 import PartnersCarousel from "@/components/PartnersCarousel";
+import NavClock from "@/components/NavClock";
+import ScrollAnimations from "@/components/ScrollAnimations";
+import FooterParallax from "@/components/FooterParallax";
+import ContactSection from "@/components/ContactSection";
+import ContactListAnimations from "@/components/ContactListAnimations";
+import HeroTitleAnimation from "@/components/HeroTitleAnimation";
 import ideas from "@/content/ideas.json";
 import { getCopy, isLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -46,7 +52,7 @@ function TrailDecoration({ variant = 1 }: { variant?: 1 | 2 | 3 }) {
       >
         <path
           d={paths[variant]}
-          stroke="var(--color-gold)"
+          stroke="var(--color-pine)"
           strokeWidth="1.2"
           strokeDasharray="8 6"
           strokeLinecap="round"
@@ -64,13 +70,18 @@ function HomePageContent({ locale }: { locale: Locale }) {
   return (
     <main className="relative">
       <ScrollTrail />
+      <ScrollAnimations />
+      <HeroTitleAnimation />
 
-      {/* ── Header ────────────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-[var(--background)]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-5">
-          <Link href={`/${locale}`} className="text-[0.72rem] font-bold tracking-[0.3em] text-[var(--color-text-primary)]">
-            CHAGRA—NET
-          </Link>
+      {/* ── Header (warm olive tone) ────────────────────────── */}
+      <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-cream)]/95 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-8">
+            <Link href={`/${locale}`} className="text-[0.72rem] font-bold tracking-[0.3em] text-[var(--color-text-primary)]">
+              CHAGRA—NET
+            </Link>
+            <NavClock className="hidden text-[var(--color-text-secondary)] sm:block" />
+          </div>
           <div className="flex items-center gap-8">
             <nav className="hidden gap-7 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] md:flex">
               {[
@@ -78,6 +89,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 { label: "Roadmap", href: "#roadmap" },
                 { label: "Ideas", href: "#ideas" },
                 { label: "Team", href: "#team" },
+                { label: "Contact", href: "#contact" },
               ].map((link) => (
                 <a key={link.href} href={link.href} className="transition-colors duration-300 hover:text-[var(--color-pine)]">
                   {link.label}
@@ -89,9 +101,9 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 <Link
                   key={t}
                   href={`/${t}`}
-                  className={`rounded-full px-2.5 py-1 text-[0.62rem] font-bold uppercase tracking-[0.18em] transition-all duration-300 ${
+                  className={`rounded-lg px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.18em] transition-all duration-300 ${
                     locale === t
-                      ? "bg-[var(--color-pine)] text-white"
+                      ? "bg-[var(--color-pine)] text-[var(--color-cream)]"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-pine)]"
                   }`}
                 >
@@ -101,16 +113,15 @@ function HomePageContent({ locale }: { locale: Locale }) {
             </div>
           </div>
         </div>
-        <hr className="divider" />
       </header>
 
       {/* ── Hero ──────────────────────────────────────── */}
       <section className="mx-auto max-w-[1200px] px-6 pb-32 pt-28 lg:pb-40 lg:pt-36">
-        <p className="label">{c.hero.eyebrow}</p>
-        <h1 className="hero-title mt-5">
+        <p className="label" data-animate="fade">{c.hero.eyebrow}</p>
+        <h1 className="hero-title mt-5" data-hero-title>
           <em>Chagra</em>—Net
         </h1>
-        <p className="body-lg mt-8 max-w-xl">{c.hero.subtitle}</p>
+        <p className="body-lg mt-8 max-w-xl" data-animate="fade">{c.hero.subtitle}</p>
         <div className="mt-12 flex flex-wrap gap-4">
           <a className="btn-primary" href="#roadmap">
             {c.hero.primaryCta}
@@ -121,7 +132,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
       </section>
 
       {/* ── Hero Video (full-bleed) ──────────────────── */}
-      <section className="px-6">
+      <section className="relative px-6">
         <div className="mx-auto max-w-[1200px]">
           <div className="relative h-[50vh] min-h-[360px] overflow-hidden rounded-2xl">
             <video
@@ -143,6 +154,17 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 Leticia — Tabatinga tri-border zone
               </p>
             </div>
+            {/* Hero footer (deadspace-style) */}
+            <div className="hero-footer pointer-events-none absolute inset-x-0 bottom-0">
+              <div className="container flex justify-between px-6 py-6">
+                <p className="type-mono text-[0.6rem] text-white/40">
+                  CHAGRA—NET __ 2026
+                </p>
+                <p className="type-mono text-[0.6rem] text-white/30">
+                  Solarpunk Amazon Corridor
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -153,8 +175,8 @@ function HomePageContent({ locale }: { locale: Locale }) {
       <section className="mx-auto max-w-[1200px] px-6 py-28 lg:py-32">
         <div className="grid gap-16 lg:grid-cols-[0.45fr_1fr] lg:items-start">
           <div>
-            <p className="label">The Thesis</p>
-            <h2 className="section-heading mt-4">
+            <p className="label" data-animate="fade">The Thesis</p>
+            <h2 className="section-heading mt-4" data-animate="slide">
               {c.why.title.split(" ").slice(0, 2).join(" ")}{" "}
               <em>{c.why.title.split(" ").slice(2).join(" ")}</em>
             </h2>
@@ -162,7 +184,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
           <div className="space-y-0">
             {c.why.points.map((point, i) => (
               <div key={point}>
-                {i > 0 && <hr className="divider" />}
+                {i > 0 && <hr className="divider-thin" />}
                 <div className="flex gap-6 py-8">
                   <span className="mt-0.5 text-[2rem] font-extralight leading-none text-[var(--color-pine)]/25">
                     {String(i + 1).padStart(2, "0")}
@@ -181,8 +203,8 @@ function HomePageContent({ locale }: { locale: Locale }) {
 
       {/* ── Core Ports ────────────────────────────────── */}
       <section id="ports" className="mx-auto max-w-[1200px] px-6 py-28 lg:py-32">
-        <p className="label">Network Nodes</p>
-        <h2 className="section-heading mt-4 max-w-lg">
+        <p className="label" data-animate="fade">Network Nodes</p>
+        <h2 className="section-heading mt-4 max-w-lg" data-animate="slide">
           <em>Core</em> Amazon {c.ports.title.split(" ").pop()}
         </h2>
 
@@ -228,8 +250,8 @@ function HomePageContent({ locale }: { locale: Locale }) {
       <section className="mx-auto max-w-[1200px] px-6 py-28 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-[0.45fr_1fr] lg:items-start">
           <div>
-            <p className="label">Design Framework</p>
-            <h2 className="section-heading mt-4">
+            <p className="label" data-animate="fade">Design Framework</p>
+            <h2 className="section-heading mt-4" data-animate="slide">
               <em>Biomimicry</em> &times; Chagra
             </h2>
           </div>
@@ -259,16 +281,43 @@ function HomePageContent({ locale }: { locale: Locale }) {
         secondaryLabel={c.cta.secondary}
       />
 
-      {/* ── Footer ────────────────────────────────────── */}
-      <footer className="border-t border-[var(--color-border)] py-10">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-4 px-6 md:flex-row">
-          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[var(--color-text-secondary)]">
-            &copy; 2026 CHAGRA—NET
-          </p>
-          <p className="text-[0.65rem] tracking-[0.2em] text-[var(--color-text-secondary)]/50">
-            Solarpunk Amazon Corridor
-          </p>
-        </div>
+      {/* ── Contact (deadspace-style + gap animation) ── */}
+      <ContactSection />
+      <ContactListAnimations />
+
+      {/* ── Footer (deadspace-style parallax) ───────────── */}
+      <footer className="border-t border-white/5">
+        <FooterParallax>
+          <div className="footer-container">
+            <div className="footer-row">
+              <div className="footer-col">
+                <p className="text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-white/90">
+                  &copy; 2026 CHAGRA—NET
+                </p>
+                <p className="text-[0.6rem] tracking-[0.18em] text-white/50">
+                  Solarpunk Amazon Corridor
+                </p>
+              </div>
+              <div className="footer-col">
+                <a href="#ports" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
+                  Ports
+                </a>
+                <a href="#roadmap" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
+                  Roadmap
+                </a>
+                <a href="#ideas" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
+                  Ideas
+                </a>
+                <a href="#team" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
+                  Team
+                </a>
+                <a href="#contact" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+        </FooterParallax>
       </footer>
     </main>
   );

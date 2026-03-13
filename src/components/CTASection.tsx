@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ContactModal from "./ContactModal";
+import { useTransition } from "@/contexts/TransitionContext";
 
 interface CTASectionProps {
   title: string;
@@ -17,6 +18,23 @@ export default function CTASection({
   secondaryLabel,
 }: CTASectionProps) {
   const [modal, setModal] = useState<"partner" | "resident" | null>(null);
+  const transition = useTransition();
+
+  const openModal = (type: "partner" | "resident") => {
+    if (transition) {
+      transition.playIn(() => setModal(type));
+    } else {
+      setModal(type);
+    }
+  };
+
+  const closeModal = () => {
+    if (transition) {
+      transition.playOut(() => setModal(null));
+    } else {
+      setModal(null);
+    }
+  };
 
   return (
     <section className="mx-auto max-w-[1200px] px-6 pb-32 pt-8">
@@ -33,7 +51,7 @@ export default function CTASection({
         >
           <path
             d="M -5 75 C 20 70, 35 85, 55 72 C 75 60, 90 78, 105 65"
-            stroke="var(--color-gold)"
+            stroke="var(--color-pine)"
             strokeWidth="0.15"
             strokeDasharray="1.2 0.8"
             strokeLinecap="round"
@@ -42,7 +60,7 @@ export default function CTASection({
           />
           <path
             d="M -5 25 C 15 32, 40 15, 60 28 C 80 40, 95 22, 105 30"
-            stroke="var(--color-gold)"
+            stroke="var(--color-pine)"
             strokeWidth="0.1"
             strokeDasharray="1 0.8"
             strokeLinecap="round"
@@ -52,8 +70,8 @@ export default function CTASection({
         </svg>
 
         <div className="relative">
-          <p className="label text-white/40">Join Us</p>
-          <h2 className="section-heading mx-auto mt-4 max-w-xl text-white">
+          <p className="text-[0.75rem] font-bold uppercase tracking-[0.25em] text-white" data-animate="fade">Join Us</p>
+          <h2 className="section-heading mx-auto mt-4 max-w-xl text-white" data-animate="slide">
             {title}
           </h2>
           <p className="mx-auto mt-6 max-w-md text-[0.95rem] leading-relaxed text-white/50">
@@ -62,14 +80,14 @@ export default function CTASection({
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
             <button
               type="button"
-              onClick={() => setModal("partner")}
+              onClick={() => openModal("partner")}
               className="rounded-full bg-white px-7 py-3.5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[var(--color-dark)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,255,255,0.15)]"
             >
               {primaryLabel}
             </button>
             <button
               type="button"
-              onClick={() => setModal("resident")}
+              onClick={() => openModal("resident")}
               className="rounded-full border border-white/15 px-7 py-3.5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-white/70 transition-all duration-300 hover:border-white/40 hover:-translate-y-0.5"
             >
               {secondaryLabel}
@@ -81,7 +99,7 @@ export default function CTASection({
       <ContactModal
         type={modal || "partner"}
         open={modal !== null}
-        onClose={() => setModal(null)}
+        onClose={closeModal}
       />
     </section>
   );

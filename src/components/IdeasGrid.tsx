@@ -66,7 +66,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
     <section id="ideas" className="mx-auto max-w-[1200px] px-6 py-32">
       <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:items-start">
         <div>
-          <p className="label text-white/35">Projects</p>
+          <p className="text-[0.75rem] font-bold uppercase tracking-[0.25em] text-white">Projects</p>
           <h2 className="section-heading mt-4 text-white">
             <em>Idea</em> Bank
           </h2>
@@ -100,7 +100,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
-                className="dark-card cursor-pointer p-6 transition-colors duration-300 hover:bg-white/[0.06]"
+                className="dark-card font-stylish cursor-pointer p-6 transition-colors duration-300 hover:bg-white/[0.06]"
                 onClick={() => setSelectedIdea(idea)}
               >
                 <div className="flex items-center justify-between">
@@ -190,7 +190,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
 
                 <hr className="my-6 border-white/6" />
 
-                <div className="space-y-4">
+                <div className="font-stylish space-y-4">
                   <p className="text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/25">
                     Details
                   </p>

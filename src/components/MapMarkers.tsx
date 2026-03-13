@@ -40,9 +40,9 @@ export default function MapMarkers({
               [next.lat, next.lng],
             ]}
             pathOptions={{
-              color: "#fed583",
-              weight: 2,
-              opacity: 0.7,
+              color: "#3d4f3a",
+              weight: 3,
+              opacity: 1,
               dashArray: "10 6",
               className: isDrawing ? "route-draw" : "route-pulse",
             }}
@@ -62,15 +62,15 @@ export default function MapMarkers({
             radius={isActive ? 7 : isReached ? 5 : 3}
             pathOptions={{
               color: isActive
-                ? "#fed583"
+                ? "#5a6b4e"
                 : isReached
-                  ? "rgba(254,213,131,0.6)"
-                  : "rgba(255,255,255,0.25)",
+                  ? "rgba(90,107,78,0.6)"
+                  : "rgba(51,51,51,0.25)",
               fillColor: isActive
-                ? "#fed583"
+                ? "#5a6b4e"
                 : isReached
-                  ? "rgba(254,213,131,0.4)"
-                  : "rgba(255,255,255,0.15)",
+                  ? "rgba(90,107,78,0.5)"
+                  : "rgba(51,51,51,0.15)",
               fillOpacity: 1,
               weight: isActive ? 2 : 1,
               className: isActive

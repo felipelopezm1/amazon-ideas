@@ -154,64 +154,72 @@ export default function AmazonMapRoadmap({
     <section
       ref={sectionRef}
       id="roadmap"
-      className="relative mx-auto max-w-[1200px] px-6"
+      className="relative w-full bg-[var(--color-cream)]"
       style={{ minHeight: "220vh", paddingTop: "8rem", paddingBottom: "8rem" }}
     >
-      <div className="sticky top-16" style={{ zIndex: 10 }}>
-        <div className="grid gap-12 lg:grid-cols-[0.36fr_1fr] lg:items-start">
-          {/* Left sidebar */}
+      <div
+        className="sticky top-16 flex min-h-[calc(100vh-4rem)] items-center justify-center py-12"
+        style={{ zIndex: 10 }}
+      >
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+        <div className="grid gap-12 grid-cols-1 md:grid-cols-[0.36fr_1fr] md:items-start">
+          {/* Left sidebar — cream beige + dark charcoal + olive accents */}
           <div>
-            <p className="label text-white/35">{roadmapCopy.phaseLabel}</p>
-            <h2 className="section-heading mt-4 text-white">
+            <p className="label text-[var(--color-text-secondary)]/80">{roadmapCopy.phaseLabel}</p>
+            <h2 className="section-heading mt-4 text-[var(--color-text-primary)]">
               <em>Interactive</em> Roadmap
             </h2>
-            <p className="mt-4 text-[0.86rem] leading-relaxed text-white/40">
+            <p className="mt-4 text-[0.86rem] leading-relaxed text-[var(--color-text-secondary)]">
               {roadmapCopy.instructions}
             </p>
 
-            {/* Progress line + city buttons */}
-            <div className="relative mt-8 pl-5">
-              {/* Vertical track */}
-              <div className="absolute left-[13px] top-0 h-full w-px bg-white/8" />
+            {/* Progress line + city list (dashed track, filled/hollow dots) */}
+            <div className="relative mt-8 pl-4">
+              {/* Dashed vertical track */}
+              <div
+                className="absolute left-[5px] top-0 h-full w-px"
+                style={{
+                  background: "repeating-linear-gradient(to bottom, rgba(51,51,51,0.2) 0, rgba(51,51,51,0.2) 4px, transparent 4px, transparent 8px)",
+                }}
+              />
               <motion.div
-                className="absolute left-[13px] top-0 w-px bg-[var(--color-gold)]"
+                className="absolute left-[5px] top-0 w-px"
+                style={{
+                  background: "repeating-linear-gradient(to bottom, var(--color-pine) 0, var(--color-pine) 4px, transparent 4px, transparent 8px)",
+                }}
                 animate={{ height: `${((activeIdx + 0.5) / cities.length) * 100}%` }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               />
 
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-0.5">
                 {cities.map((city, i) => {
                   const isActive = active === city.id;
-                  const isPast = i <= activeIdx;
+                  const isPast = i < activeIdx;
                   return (
                     <button
                       key={city.id}
                       type="button"
                       onClick={() => pick(city.id)}
-                      className={`group relative flex items-center gap-4 rounded-xl px-4 py-3.5 text-left transition-all duration-500 ${
-                        isActive
-                          ? "bg-white/8 text-white"
-                          : "text-white/30 hover:bg-white/4 hover:text-white/55"
+                      className={`group relative flex items-center gap-3 rounded-lg py-3 text-left transition-all duration-300 ${
+                        isActive ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-secondary)]/70 hover:text-[var(--color-text-primary)]"
                       }`}
                     >
                       <span
-                        className={`relative z-10 -ml-[29px] flex h-[11px] w-[11px] shrink-0 items-center justify-center rounded-full border-2 transition-all duration-500 ${
+                        className={`relative z-10 -ml-[19px] flex h-[8px] w-[8px] shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                           isActive
-                            ? "border-[var(--color-gold)] bg-[var(--color-gold)]"
+                            ? "border-2 border-[var(--color-pine)] bg-[var(--color-pine)]"
                             : isPast
-                              ? "border-[var(--color-gold)] bg-transparent"
-                              : "border-white/15 bg-transparent"
+                              ? "border-2 border-[var(--color-pine)] bg-transparent"
+                              : "border border-[var(--color-border)] bg-transparent"
                         }`}
                       />
-                      <div className="flex items-center gap-2">
-                        <span className="text-[0.6rem] font-bold tabular-nums opacity-40">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="text-sm font-semibold">{city.label}</span>
-                        <span className="text-[0.55rem] uppercase tracking-[0.2em] opacity-35">
-                          {city.country}
-                        </span>
-                      </div>
+                      <span className="text-[0.6rem] font-bold tabular-nums text-[var(--color-text-secondary)]">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[0.8rem] font-medium">{city.label}</span>
+                      <span className="text-[0.55rem] uppercase tracking-[0.15em] text-[var(--color-text-secondary)]/60">
+                        {city.country}
+                      </span>
                     </button>
                   );
                 })}
@@ -223,8 +231,8 @@ export default function AmazonMapRoadmap({
           <div className="space-y-4">
             {/* Map */}
             <div
-              className="relative overflow-hidden rounded-2xl border border-white/5"
-              style={{ height: 440 }}
+              className="relative overflow-hidden rounded-xl border border-[var(--color-border)]"
+              style={{ height: 480 }}
             >
               {mounted && (
                 <>
@@ -244,7 +252,7 @@ export default function AmazonMapRoadmap({
                       inset: 0,
                     }}
                   >
-                    <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
+                    <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
                     <MapFlyTo
                       lat={mapTarget.lat}
                       lng={mapTarget.lng}
@@ -267,13 +275,13 @@ export default function AmazonMapRoadmap({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.5 }}
-                    className="absolute inset-0 z-20 flex items-end justify-start p-8"
+                    className="absolute inset-0 z-[500] flex items-end justify-start p-8"
                   >
                     <div>
-                      <p className="text-[0.55rem] font-bold uppercase tracking-[0.4em] text-white/20">
+                      <p className="text-[0.55rem] font-bold uppercase tracking-[0.4em] text-[var(--color-text-secondary)]/60">
                         Scroll to explore
                       </p>
-                      <p className="mt-1 text-lg font-semibold text-white/45">
+                      <p className="mt-1 text-lg font-semibold text-[var(--color-text-primary)]">
                         The Amazon Basin
                       </p>
                     </div>
@@ -281,85 +289,58 @@ export default function AmazonMapRoadmap({
                 )}
               </AnimatePresence>
 
-              {/* City name overlay when zoomed in */}
-              <AnimatePresence mode="wait">
-                {scrollPhase !== "globe" && scrollPhase !== "region" && (
-                  <motion.div
-                    key={`label-${scrollPhase}`}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute right-6 top-6 z-20"
+              {/* Phase badge — top right, animates on change */}
+              <div className="absolute right-6 top-6 z-[500] flex flex-col items-end gap-2">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={card.phase}
+                    initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="rounded-lg border border-[var(--color-border)] bg-[var(--color-cream)] px-3 py-1.5 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[var(--color-pine)] shadow-sm"
                   >
-                    <p className="text-right text-2xl font-bold text-white/80">
+                    {card.phase}
+                  </motion.span>
+                </AnimatePresence>
+                {/* City name when zoomed in */}
+                <AnimatePresence mode="wait">
+                  {scrollPhase !== "globe" && scrollPhase !== "region" && (
+                    <motion.div
+                      key={`label-${scrollPhase}`}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                    <p className="text-right text-2xl font-bold text-[var(--color-text-primary)]">
                       {cityData.label}
                     </p>
-                    <p className="text-right text-[0.6rem] font-bold uppercase tracking-[0.3em] text-white/25">
+                    <p className="text-right text-[0.6rem] font-bold uppercase tracking-[0.3em] text-[var(--color-text-secondary)]">
                       {cityData.country === "CO" ? "Colombia" : "Brazil"}
                     </p>
                   </motion.div>
-                )}
-              </AnimatePresence>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
 
-            {/* City detail card */}
+            {/* Compact bottom bar: city only */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -14 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="dark-card p-7"
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-cream)] px-6 py-4"
               >
-                <div className="flex items-center gap-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-gold)]" />
-                  <h3 className="text-lg font-semibold text-white">
-                    {cityData.label}
-                  </h3>
-                  <span className="rounded-full bg-white/6 px-2.5 py-0.5 text-[0.58rem] font-bold uppercase tracking-[0.2em] text-white/40">
-                    {card.phase}
-                  </span>
-                </div>
-
-                <div className="mt-6 grid gap-5 md:grid-cols-2">
-                  <div>
-                    <p className="text-[0.58rem] font-bold uppercase tracking-[0.25em] text-white/30">
-                      Challenge
-                    </p>
-                    <p className="mt-2 text-[0.88rem] leading-relaxed text-white/55">
-                      {card.challenge}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[0.58rem] font-bold uppercase tracking-[0.25em] text-[var(--color-gold)]/60">
-                      Opportunity
-                    </p>
-                    <p className="mt-2 text-[0.88rem] leading-relaxed text-white/70">
-                      {card.opportunity}
-                    </p>
-                  </div>
-                </div>
-
-                <hr className="my-5 border-white/6" />
-
-                <p className="text-[0.58rem] font-bold uppercase tracking-[0.25em] text-white/25">
-                  {roadmapCopy.allIdeasTitle}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {cityIdeas.map((idea) => (
-                    <span
-                      key={idea.id}
-                      className="rounded-full bg-white/5 px-3 py-1.5 text-[0.72rem] text-white/50"
-                    >
-                      {idea.title[locale]}
-                    </span>
-                  ))}
-                </div>
+                <span className="h-2 w-2 rounded-full bg-[var(--color-pine)]" />
+                <span className="font-semibold text-[var(--color-text-primary)]">{cityData.label}</span>
               </motion.div>
             </AnimatePresence>
           </div>
+        </div>
         </div>
       </div>
     </section>

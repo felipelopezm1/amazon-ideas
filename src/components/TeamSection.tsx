@@ -18,7 +18,7 @@ const team = [
   {
     name: "Pearl Suchanan",
     role: "cto" as const,
-    bio: "Technology strategist and systems architect driving scalable digital infrastructure.",
+    bio: "Creative Technologist and software engineer. MSc Creative Computing at UAL London. Technology strategist and systems architect driving scalable digital infrastructure.",
     linkedin: "https://www.linkedin.com/in/pearlsuchanan/",
     image: "/images/team/pearl.jpeg",
   },
@@ -41,7 +41,7 @@ export default function TeamSection({ title, roles }: Props) {
 
       <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3">
         {team.map((m) => (
-          <article key={m.name} className="group bg-white">
+          <article key={m.name} className="group bg-[var(--color-cream)]">
             <div className="relative h-72 overflow-hidden">
               <Image
                 src={m.image}
