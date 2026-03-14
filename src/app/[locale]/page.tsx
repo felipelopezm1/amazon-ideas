@@ -11,6 +11,7 @@ import NavClock from "@/components/NavClock";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import FooterParallax from "@/components/FooterParallax";
 import HeroTitleAnimation from "@/components/HeroTitleAnimation";
+import WhyThesisHighlight from "@/components/WhyThesisHighlight";
 import ideas from "@/content/ideas.json";
 import { getCopy, isLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -179,21 +180,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
               <em>{c.why.title.split(" ").slice(2).join(" ")}</em>
             </h2>
           </div>
-          <div className="space-y-0">
-            {c.why.points.map((point, i) => (
-              <div key={point}>
-                {i > 0 && <hr className="divider-thin" />}
-                <div className="flex gap-6 py-8">
-                  <span className="mt-0.5 text-[2rem] font-extralight leading-none text-[var(--color-pine)]/25">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-[0.98rem] leading-[1.75] text-[var(--color-text-secondary)]">
-                    {point}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <WhyThesisHighlight points={c.why.points} />
         </div>
       </section>
 
@@ -216,14 +203,14 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)] via-[var(--color-dark)]/30 to-transparent opacity-70" />
                 <div className="absolute bottom-5 left-6">
-                  <p className="text-[0.62rem] font-bold uppercase tracking-[0.3em] text-white/50">
+                  <p className="font-stylish text-[0.62rem] font-bold uppercase tracking-[0.3em] text-white/50">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-white">{port.name}</h3>
+                  <h3 className="font-stylish mt-1 text-lg font-semibold text-white">{port.name}</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-[0.92rem] leading-relaxed text-[var(--color-text-secondary)]">{port.focus}</p>
+                <p className="font-stylish text-[1rem] leading-relaxed text-[var(--color-text-secondary)]">{port.focus}</p>
               </div>
             </article>
           ))}
