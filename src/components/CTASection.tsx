@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import ContactModal from "./ContactModal";
-import { useTransition } from "@/contexts/TransitionContext";
 
 interface CTASectionProps {
   title: string;
@@ -18,24 +17,13 @@ export default function CTASection({
   secondaryLabel,
 }: CTASectionProps) {
   const [modal, setModal] = useState<"partner" | "resident" | null>(null);
-  const transition = useTransition();
 
-  const openModal = (type: "partner" | "resident") => {
-    if (transition) {
-      transition.playIn(() => setModal(type));
-    } else {
-      setModal(type);
-    }
-  };
-
-  const closeModal = () => {
-    setModal(null);
-    transition?.playOut();
-  };
+  const openModal = (type: "partner" | "resident") => setModal(type);
+  const closeModal = () => setModal(null);
 
   return (
-    <section className="mx-auto max-w-[1200px] px-6 pb-32 pt-8">
-      <div className="relative overflow-hidden rounded-2xl bg-[var(--color-dark)] px-8 py-20 text-center lg:px-16 lg:py-28">
+    <section id="contact" className="mx-auto max-w-[1200px] px-4 pb-16 pt-4 sm:px-6 sm:pb-32 sm:pt-8">
+      <div className="relative overflow-hidden rounded-2xl bg-[var(--color-dark)] px-5 py-14 text-center sm:px-8 sm:py-20 lg:px-16 lg:py-28">
         <div className="pointer-events-none absolute -right-32 -top-32 h-[400px] w-[400px] rounded-full bg-[var(--color-pine)] opacity-20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-[250px] w-[250px] rounded-full bg-[var(--color-gold)] opacity-15 blur-[80px]" />
 

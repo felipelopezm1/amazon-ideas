@@ -47,6 +47,44 @@
       }
     ]
   },
+  "cop30": {
+    "eyebrow": "COP30 Alignment — Belém 2025",
+    "title": "Built on global climate frameworks",
+    "body": "CHAGRA-NET is designed to align directly with the policy frameworks and financing mechanisms emerging from COP30 in Belém. Rather than operating outside climate governance, the corridor positions biomimicry as a governance and value-allocation framework for Amazonian bioeconomy.",
+    "pillars": [
+      {
+        "tag": "Article 6.8",
+        "title": "Non-Market Regenerative Cooperation",
+        "desc": "Our governance model fits UNFCCC Article 6.8 — integrated, holistic approaches using finance, technology transfer, and capacity building for local regeneration and cultural stewardship, rather than speculative carbon trading."
+      },
+      {
+        "tag": "TFFF",
+        "title": "Tropical Forests Forever Facility",
+        "desc": "The Brazil-led TFFF reserves at least 20% of resources for Indigenous Peoples. CHAGRA-NET mirrors this logic: forest protection + direct community benefit + long-term finance, not extractive value capture."
+      },
+      {
+        "tag": "Adaptation Finance",
+        "title": "Belém Finance Package",
+        "desc": "COP30 calls to triple adaptation finance by 2035. Our projects — agroforestry, flood adaptation, forest livelihoods, territorial regeneration — position biomimicry as adaptation-and-livelihoods infrastructure."
+      },
+      {
+        "tag": "Bioeconomy",
+        "title": "COP30 Bioeconomy Challenge",
+        "desc": "COP30 launched a three-year multi-stakeholder platform to turn bioeconomy principles into concrete action. CHAGRA-NET is the cultural-ecological engine for exactly this — markets that protect nature while putting communities at the center."
+      },
+      {
+        "tag": "LCIPP",
+        "title": "Indigenous Participation & Governance",
+        "desc": "COP30 set record Indigenous participation and land-tenure pledges. Our biomimicry token is only credible when Indigenous and traditional communities are co-designers, rights-holders, and beneficiaries — never just inspiration."
+      },
+      {
+        "tag": "GGA",
+        "title": "Global Goal on Adaptation",
+        "desc": "The GGA framework measures adaptive capacity, resilience, and vulnerability reduction. Our KPIs track whether the corridor actually improves community resilience, food systems, water security, and ecosystem repair."
+      }
+    ],
+    "quote": "In COP30-aligned terms, biomimicry can be positioned not merely as a design metaphor, but as a governance and value-allocation framework for Amazonian bioeconomy."
+  },
   "roadmap": {
     "title": "Interactive Roadmap",
     "instructions": "Hover or focus a city point to view local opportunities and phased projects.",

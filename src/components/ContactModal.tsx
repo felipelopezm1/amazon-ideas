@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 
 type ModalType = "partner" | "resident";
 
@@ -11,11 +11,27 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+const RECIPIENT = "felipe.lopezmwork@gmail.com";
+
 export default function ContactModal({ type, open, onClose }: ContactModalProps) {
   const [submitted, setSubmitted] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    document.body.style.overflow = "hidden";
+    const w = window as unknown as Record<string, unknown>;
+    const lenis = w.__lenis as { stop?: () => void; start?: () => void } | undefined;
+    lenis?.stop?.();
+    return () => {
+      document.body.style.overflow = "";
+      const l = (window as unknown as Record<string, unknown>).__lenis as { start?: () => void } | undefined;
+      l?.start?.();
+    };
+  }, [open]);
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -25,6 +41,40 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
+
+    const fd = new FormData(formRef.current);
+    const get = (key: string) => (fd.get(key) as string) || "";
+    const isPartner = type === "partner";
+
+    const subject = isPartner
+      ? `[CHAGRA-NET Partnership] ${get("organization") || get("name")}`
+      : `[CHAGRA-NET Residency] ${get("name")}`;
+
+    const bodyParts: string[] = [
+      `Name: ${get("name")}`,
+      `Email: ${get("email")}`,
+    ];
+
+    if (isPartner) {
+      if (get("organization")) bodyParts.push(`Organization: ${get("organization")}`);
+      if (get("partnerType")) bodyParts.push(`Partnership Type: ${get("partnerType")}`);
+    } else {
+      if (get("background")) bodyParts.push(`Background: ${get("background")}`);
+      if (get("port")) bodyParts.push(`Preferred Port: ${get("port")}`);
+      if (get("duration")) bodyParts.push(`Duration: ${get("duration")}`);
+    }
+
+    if (get("message")) {
+      bodyParts.push("", "Message:", get("message"));
+    }
+
+    if (file) {
+      bodyParts.push("", `[File attached locally: ${file.name} — please attach it to this email before sending]`);
+    }
+
+    const mailto = `mailto:${RECIPIENT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyParts.join("\n"))}`;
+    window.open(mailto, "_blank");
     setSubmitted(true);
   };
 
@@ -33,6 +83,7 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
     setTimeout(() => {
       setSubmitted(false);
       setFile(null);
+      formRef.current?.reset();
     }, 300);
   };
 
@@ -46,13 +97,14 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[100000] flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100000] flex items-start justify-center overflow-y-auto p-4 pt-[5vh]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          data-lenis-prevent
         >
           <motion.div
-            className="absolute inset-0 bg-[var(--color-dark)]/80 backdrop-blur-md"
+            className="fixed inset-0 bg-[var(--color-dark)]/80 backdrop-blur-md"
             onClick={handleClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -60,7 +112,7 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
           />
 
           <motion.div
-            className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-white/8 bg-[#0f2520] p-8 shadow-2xl"
+            className="relative z-10 my-auto w-full max-w-lg rounded-2xl border border-white/8 bg-[#0f2520] p-5 shadow-2xl sm:p-8"
             initial={{ opacity: 0, y: 30, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
@@ -94,9 +146,11 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
                     />
                   </svg>
                 </motion.div>
-                <h3 className="mt-6 text-xl font-semibold text-white">Message Sent</h3>
+                <h3 className="mt-6 text-xl font-semibold text-white">Email Client Opened</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/45">
-                  Thank you for your interest. We&apos;ll be in touch within 48 hours.
+                  Your email client should have opened with the form details pre-filled.
+                  {file && " Don\u2019t forget to attach your file before sending!"}
+                  {!file && " Review and hit send to complete your submission."}
                 </p>
                 <button
                   onClick={handleClose}
@@ -113,7 +167,7 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
                 <h3 className="mt-2 text-xl font-semibold text-white">{title}</h3>
                 <p className="mt-2 text-[0.88rem] leading-relaxed text-white/40">{subtitle}</p>
 
-                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <form ref={formRef} onSubmit={handleSubmit} className="mt-8 space-y-5">
                   <Field label="Full Name" name="name" required />
                   <Field label="Email Address" name="email" type="email" required />
 
@@ -252,6 +306,11 @@ export default function ContactModal({ type, open, onClose }: ContactModalProps)
                         </>
                       )}
                     </div>
+                    {file && (
+                      <p className="mt-2 text-[0.6rem] text-white/20">
+                        The file will need to be manually attached in your email client after it opens.
+                      </p>
+                    )}
                   </div>
 
                   <button

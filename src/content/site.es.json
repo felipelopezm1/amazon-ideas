@@ -47,6 +47,44 @@
       }
     ]
   },
+  "cop30": {
+    "eyebrow": "Alineación COP30 — Belém 2025",
+    "title": "Construido sobre marcos climáticos globales",
+    "body": "CHAGRA-NET está diseñado para alinearse directamente con los marcos políticos y mecanismos de financiamiento surgidos de la COP30 en Belém. En lugar de operar fuera de la gobernanza climática, el corredor posiciona la biomimética como un marco de gobernanza y asignación de valor para la bioeconomía amazónica.",
+    "pillars": [
+      {
+        "tag": "Artículo 6.8",
+        "title": "Cooperación Regenerativa No-Mercado",
+        "desc": "Nuestro modelo de gobernanza se ajusta al Artículo 6.8 de la CMNUCC — enfoques integrados y holísticos que utilizan financiamiento, transferencia tecnológica y capacitación para la regeneración local y la custodia cultural."
+      },
+      {
+        "tag": "TFFF",
+        "title": "Fondo Bosques Tropicales para Siempre",
+        "desc": "El TFFF liderado por Brasil reserva al menos el 20% de recursos para Pueblos Indígenas. CHAGRA-NET replica esta lógica: protección forestal + beneficio comunitario directo + financiamiento a largo plazo."
+      },
+      {
+        "tag": "Financiamiento",
+        "title": "Paquete Financiero de Belém",
+        "desc": "La COP30 pide triplicar el financiamiento de adaptación para 2035. Nuestros proyectos — agroforestería, adaptación a inundaciones, medios de vida forestales — posicionan la biomimética como infraestructura de adaptación."
+      },
+      {
+        "tag": "Bioeconomía",
+        "title": "Desafío Bioeconomía COP30",
+        "desc": "La COP30 lanzó una plataforma multi-actor de tres años para convertir principios de bioeconomía en acción concreta. CHAGRA-NET es el motor cultural-ecológico para esto — mercados que protegen la naturaleza poniendo comunidades al centro."
+      },
+      {
+        "tag": "LCIPP",
+        "title": "Participación y Gobernanza Indígena",
+        "desc": "La COP30 estableció participación indígena récord y compromisos de tenencia de tierra. Nuestro token de biomimética solo es legítimo cuando las comunidades indígenas son co-diseñadoras, titulares de derechos y beneficiarias."
+      },
+      {
+        "tag": "GGA",
+        "title": "Meta Global de Adaptación",
+        "desc": "El marco GGA mide capacidad adaptativa, resiliencia y reducción de vulnerabilidad. Nuestros KPIs rastrean si el corredor realmente mejora la resiliencia comunitaria, sistemas alimentarios, seguridad hídrica y reparación ecosistémica."
+      }
+    ],
+    "quote": "En términos alineados a la COP30, la biomimética puede posicionarse no solo como una metáfora de diseño, sino como un marco de gobernanza y asignación de valor para la bioeconomía amazónica."
+  },
   "roadmap": {
     "title": "Hoja de Ruta Interactiva",
     "instructions": "Pasa el cursor o usa foco en un punto para ver oportunidades locales y proyectos por fase.",

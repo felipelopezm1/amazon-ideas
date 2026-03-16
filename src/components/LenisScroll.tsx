@@ -11,7 +11,7 @@ export default function LenisScroll() {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    const isMobile = typeof window !== "undefined" && window.innerWidth <= 1000;
+    const isMobile = window.innerWidth <= 1000;
 
     const lenis = new Lenis({
       duration: isMobile ? 0.8 : 1.2,
@@ -22,15 +22,19 @@ export default function LenisScroll() {
     });
 
     lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
+
+    const tick = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
     lenisRef.current = lenis;
+    (window as unknown as Record<string, unknown>).__lenis = lenis;
 
     return () => {
-      gsap.ticker.remove((time) => lenis.raf(time * 1000));
+      gsap.ticker.remove(tick);
       lenis.destroy();
       lenisRef.current = null;
+      delete (window as unknown as Record<string, unknown>).__lenis;
     };
   }, []);
 

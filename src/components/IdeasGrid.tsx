@@ -63,8 +63,8 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
   }, [activeFilter, ideas, selectedCity]);
 
   return (
-    <section id="ideas" className="mx-auto max-w-[1200px] px-6 py-32">
-      <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:items-start">
+    <section id="ideas" className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
+      <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.42fr_1fr] lg:items-start">
         <div>
           <p className="text-[0.75rem] font-bold uppercase tracking-[0.25em] text-white">Projects</p>
           <h2 className="section-heading mt-4 text-white">
@@ -72,13 +72,13 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
           </h2>
           <p className="mt-5 text-[0.92rem] leading-relaxed text-white/40">{subtitle}</p>
 
-          <div className="mt-8 flex flex-col gap-1">
+          <div className="mt-6 flex flex-wrap gap-1 sm:mt-8 lg:flex-col">
             {filterKeys.map((key) => (
               <button
                 key={key}
                 type="button"
                 onClick={() => setActiveFilter(key)}
-                className={`rounded-lg px-3 py-2 text-left text-[0.72rem] font-semibold uppercase tracking-[0.15em] transition-all duration-300 ${
+                className={`rounded-lg px-3 py-1.5 text-left text-[0.65rem] font-semibold uppercase tracking-[0.15em] transition-all duration-300 sm:py-2 sm:text-[0.72rem] ${
                   activeFilter === key
                     ? "bg-white/8 text-white"
                     : "text-white/30 hover:text-white/55"
@@ -90,7 +90,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
           </div>
         </div>
 
-        <motion.div layout className="grid gap-4 md:grid-cols-2">
+        <motion.div layout className="grid gap-4 sm:grid-cols-2">
           <AnimatePresence mode="popLayout">
             {visible.map((idea, i) => (
               <motion.article
@@ -137,7 +137,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
       <AnimatePresence>
         {selectedIdea && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-3 pt-[3vh] sm:items-center sm:p-4 sm:pt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -157,7 +157,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Hero image */}
-              <div className="relative h-52 overflow-hidden rounded-t-2xl">
+              <div className="relative h-40 overflow-hidden rounded-t-2xl sm:h-52">
                 <img
                   src={PLACEHOLDER_IMAGES[ideas.indexOf(selectedIdea) % PLACEHOLDER_IMAGES.length]}
                   alt=""
@@ -180,7 +180,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
               </div>
 
               {/* Content */}
-              <div className="p-7">
+              <div className="p-5 sm:p-7">
                 <h3 className="text-xl font-semibold text-white">
                   {selectedIdea.title[locale]}
                 </h3>

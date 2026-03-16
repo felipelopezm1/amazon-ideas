@@ -155,27 +155,48 @@ export default function AmazonMapRoadmap({
       ref={sectionRef}
       id="roadmap"
       className="relative w-full bg-[var(--color-cream)]"
-      style={{ minHeight: "220vh", paddingTop: "8rem", paddingBottom: "8rem" }}
+      style={{ minHeight: "220vh", paddingTop: "4rem", paddingBottom: "4rem" }}
     >
       <div
-        className="sticky top-16 flex min-h-[calc(100vh-4rem)] items-center justify-center py-12"
+        className="sticky top-14 flex min-h-[calc(100vh-3.5rem)] items-center justify-center py-6 sm:top-16 sm:min-h-[calc(100vh-4rem)] sm:py-12"
         style={{ zIndex: 10 }}
       >
-        <div className="mx-auto w-full max-w-[1200px] px-6">
-        <div className="grid gap-12 grid-cols-1 md:grid-cols-[0.36fr_1fr] md:items-start">
+        <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6">
+        <div className="grid grid-cols-1 gap-6 sm:gap-12 md:grid-cols-[0.36fr_1fr] md:items-start">
           {/* Left sidebar — cream beige + dark charcoal + olive accents */}
           <div>
             <p className="label text-[var(--color-text-secondary)]/80">{roadmapCopy.phaseLabel}</p>
-            <h2 className="section-heading mt-4 text-[var(--color-text-primary)]">
+            <h2 className="section-heading mt-3 text-[var(--color-text-primary)] sm:mt-4">
               <em>Interactive</em> Roadmap
             </h2>
-            <p className="mt-4 text-[0.86rem] leading-relaxed text-[var(--color-text-secondary)]">
+            <p className="mt-3 text-[0.82rem] leading-relaxed text-[var(--color-text-secondary)] sm:mt-4 sm:text-[0.86rem]">
               {roadmapCopy.instructions}
             </p>
 
-            {/* Progress line + city list (dashed track, filled/hollow dots) */}
-            <div className="relative mt-8 pl-4">
-              {/* Dashed vertical track */}
+            {/* Mobile: horizontal pill selector */}
+            <div className="mt-4 flex gap-2 overflow-x-auto pb-2 md:hidden">
+              {cities.map((city, i) => {
+                const isActive = active === city.id;
+                return (
+                  <button
+                    key={city.id}
+                    type="button"
+                    onClick={() => pick(city.id)}
+                    className={`flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-[0.68rem] font-semibold transition-all duration-300 ${
+                      isActive
+                        ? "border-[var(--color-pine)] bg-[var(--color-pine)] text-white"
+                        : "border-[var(--color-border)] text-[var(--color-text-secondary)]"
+                    }`}
+                  >
+                    <span className="text-[0.55rem] tabular-nums opacity-60">{String(i + 1).padStart(2, "0")}</span>
+                    {city.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Desktop: vertical progress line + city list */}
+            <div className="relative mt-8 hidden pl-4 md:block">
               <div
                 className="absolute left-[5px] top-0 h-full w-px"
                 style={{
@@ -232,7 +253,7 @@ export default function AmazonMapRoadmap({
             {/* Map */}
             <div
               className="relative overflow-hidden rounded-xl border border-[var(--color-border)]"
-              style={{ height: 480 }}
+              style={{ height: "clamp(260px, 50vh, 480px)" }}
             >
               {mounted && (
                 <>
@@ -325,18 +346,60 @@ export default function AmazonMapRoadmap({
               </div>
             </div>
 
-            {/* Compact bottom bar: city only */}
+            {/* City detail card */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
+                exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-cream)] px-6 py-4"
+                className="rounded-xl border border-[var(--color-border)] bg-[var(--color-cream)] p-4 sm:p-6"
               >
-                <span className="h-2 w-2 rounded-full bg-[var(--color-pine)]" />
-                <span className="font-semibold text-[var(--color-text-primary)]">{cityData.label}</span>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span className="h-2 w-2 rounded-full bg-[var(--color-pine)]" />
+                  <h3 className="text-sm font-semibold text-[var(--color-text-primary)] sm:text-base">
+                    {cityData.label}
+                  </h3>
+                  <span className="rounded-lg border border-[var(--color-border)] px-2.5 py-0.5 text-[0.55rem] font-bold uppercase tracking-[0.2em] text-[var(--color-pine)]">
+                    {card.phase}
+                  </span>
+                </div>
+
+                <div className="mt-5 grid gap-5 md:grid-cols-2">
+                  <div>
+                    <p className="text-[0.58rem] font-bold uppercase tracking-[0.25em] text-[var(--color-text-secondary)]/50">
+                      Challenge
+                    </p>
+                    <p className="mt-1.5 text-[0.85rem] leading-relaxed text-[var(--color-text-secondary)]">
+                      {card.challenge}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[0.58rem] font-bold uppercase tracking-[0.25em] text-[var(--color-pine)]">
+                      Opportunity
+                    </p>
+                    <p className="mt-1.5 text-[0.85rem] leading-relaxed text-[var(--color-text-secondary)]">
+                      {card.opportunity}
+                    </p>
+                  </div>
+                </div>
+
+                <hr className="my-5 border-[var(--color-border)]" />
+
+                <p className="text-[0.55rem] font-bold uppercase tracking-[0.25em] text-[var(--color-text-secondary)]/40">
+                  {roadmapCopy.allIdeasTitle}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {cityIdeas.map((idea) => (
+                    <span
+                      key={idea.id}
+                      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-sun)] px-3 py-1.5 text-[0.68rem] font-medium text-[var(--color-text-secondary)]"
+                    >
+                      {idea.title[locale]}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

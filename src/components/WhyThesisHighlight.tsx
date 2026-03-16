@@ -72,16 +72,16 @@ export default function WhyThesisHighlight({ points }: Props) {
             ref={(el) => {
               rowRefs.current[i] = el;
             }}
-            className="group -mx-6 flex gap-6 px-6 py-8 transition-colors duration-300 hover:bg-[var(--color-pine)]"
+            className="group -mx-4 flex gap-4 px-4 py-5 transition-colors duration-300 hover:bg-[var(--color-pine)] sm:-mx-6 sm:gap-6 sm:px-6 sm:py-8"
           >
             <span
               data-thesis-num
-              className="font-stylish mt-0.5 inline-flex h-10 min-w-10 items-center justify-center rounded px-1 text-[2rem] font-extralight leading-none transition-colors group-hover:bg-white/10 group-hover:text-white"
+              className="font-stylish mt-0.5 inline-flex h-8 min-w-8 items-center justify-center rounded px-1 text-[1.5rem] font-extralight leading-none transition-colors group-hover:bg-white/10 group-hover:text-white sm:h-10 sm:min-w-10 sm:text-[2rem]"
               style={{ color: "rgba(90, 107, 78, 0.25)" }}
             >
               {String(i + 1).padStart(2, "0")}
             </span>
-            <p className="font-stylish text-[1rem] leading-[1.75] text-[var(--color-text-secondary)] transition-colors group-hover:text-white/95">
+            <p className="font-stylish text-[0.88rem] leading-[1.75] text-[var(--color-text-secondary)] transition-colors group-hover:text-white/95 sm:text-[1rem]">
               {point}
             </p>
           </div>

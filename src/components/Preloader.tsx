@@ -11,15 +11,19 @@ export default function Preloader() {
 
   useEffect(() => {
     setMounted(true);
-    if (typeof window === "undefined") return;
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
 
     const hasSeen = sessionStorage.getItem(PRELOADER_KEY) === "true";
-
-    if (hasSeen) {
-      return;
-    }
+    if (hasSeen) return;
 
     setVisible(true);
+  }, [mounted]);
+
+  useEffect(() => {
+    if (!visible) return;
 
     const progressIndicator = document.querySelector(
       ".preloader-progress-indicator"
@@ -117,7 +121,7 @@ export default function Preloader() {
     };
 
     setTimeout(animateNext, 600);
-  }, [mounted, visible]);
+  }, [visible]);
 
   if (!mounted || !visible) return null;
 

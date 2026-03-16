@@ -7,6 +7,8 @@ import TeamSection from "@/components/TeamSection";
 import CTASection from "@/components/CTASection";
 import ScrollTrail from "@/components/ScrollTrail";
 import PartnersCarousel from "@/components/PartnersCarousel";
+import ChagraDiagram from "@/components/ChagraDiagram";
+import MobileNav from "@/components/MobileNav";
 import NavClock from "@/components/NavClock";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import FooterParallax from "@/components/FooterParallax";
@@ -72,21 +74,23 @@ function HomePageContent({ locale }: { locale: Locale }) {
       <ScrollAnimations />
       <HeroTitleAnimation />
 
-      {/* ── Header (warm olive tone) ────────────────────────── */}
+      {/* ── Header ────────────────────────────────────────── */}
       <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-cream)]/95 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-8">
-            <Link href={`/${locale}`} className="text-[0.72rem] font-bold tracking-[0.3em] text-[var(--color-text-primary)]">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-3 sm:py-4">
+          <div className="flex items-center gap-4 sm:gap-8">
+            <Link href={`/${locale}`} className="text-[0.65rem] font-bold tracking-[0.3em] text-[var(--color-text-primary)] sm:text-[0.72rem]">
               CHAGRA—NET
             </Link>
             <NavClock className="hidden text-[var(--color-text-secondary)] sm:block" />
           </div>
-          <div className="flex items-center gap-8">
-            <nav className="hidden gap-7 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] md:flex">
+          <div className="flex items-center gap-4 sm:gap-8">
+            <nav className="hidden gap-5 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] lg:flex xl:gap-7 xl:text-[0.68rem]">
               {[
                 { label: "Ports", href: "#ports" },
+                { label: "COP30", href: "#cop30" },
                 { label: "Roadmap", href: "#roadmap" },
                 { label: "Ideas", href: "#ideas" },
+                { label: "Chagra", href: "#chagra" },
                 { label: "Team", href: "#team" },
                 { label: "Contact", href: "#contact" },
               ].map((link) => (
@@ -100,7 +104,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 <Link
                   key={t}
                   href={`/${t}`}
-                  className={`rounded-lg px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.18em] transition-all duration-300 ${
+                  className={`rounded-lg px-2 py-1 text-[0.55rem] font-bold uppercase tracking-[0.18em] transition-all duration-300 sm:px-3 sm:py-1.5 sm:text-[0.62rem] ${
                     locale === t
                       ? "bg-[var(--color-pine)] text-[var(--color-cream)]"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-pine)]"
@@ -110,12 +114,13 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 </Link>
               ))}
             </div>
+            <MobileNav />
           </div>
         </div>
       </header>
 
       {/* ── Hero ──────────────────────────────────────── */}
-      <section className="mx-auto max-w-[1200px] px-6 pb-32 pt-28 lg:pb-40 lg:pt-36">
+      <section className="mx-auto max-w-[1200px] px-6 pb-16 pt-16 sm:pb-24 sm:pt-20 lg:pb-40 lg:pt-36">
         <p className="label" data-animate="fade">{c.hero.eyebrow}</p>
         <h1 className="hero-title mt-5" data-hero-title>
           <em>Chagra</em>—Net
@@ -133,7 +138,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
       {/* ── Hero Video (full-bleed) ──────────────────── */}
       <section className="relative px-6">
         <div className="mx-auto max-w-[1200px]">
-          <div className="relative h-[50vh] min-h-[360px] overflow-hidden rounded-2xl">
+          <div className="relative h-[35vh] min-h-[240px] overflow-hidden rounded-2xl sm:h-[45vh] sm:min-h-[300px] lg:h-[50vh] lg:min-h-[360px]">
             <video
               autoPlay
               loop
@@ -145,11 +150,11 @@ function HomePageContent({ locale }: { locale: Locale }) {
               src="/images/hero/amazon-river.mp4"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)]/60 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8">
-              <p className="text-[0.62rem] font-bold uppercase tracking-[0.3em] text-white/60">
+            <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8">
+              <p className="text-[0.52rem] font-bold uppercase tracking-[0.3em] text-white/60 sm:text-[0.62rem]">
                 Amazon River
               </p>
-              <p className="mt-1 text-base font-semibold text-white/90">
+              <p className="mt-1 text-sm font-semibold text-white/90 sm:text-base">
                 Leticia — Tabatinga tri-border zone
               </p>
             </div>
@@ -171,8 +176,8 @@ function HomePageContent({ locale }: { locale: Locale }) {
       <TrailDecoration variant={1} />
 
       {/* ── Why ───────────────────────────────────────── */}
-      <section className="mx-auto max-w-[1200px] px-6 py-28 lg:py-32">
-        <div className="grid gap-16 lg:grid-cols-[0.45fr_1fr] lg:items-start">
+      <section className="mx-auto max-w-[1200px] px-6 py-16 sm:py-20 lg:py-32">
+        <div className="grid gap-10 sm:gap-16 lg:grid-cols-[0.45fr_1fr] lg:items-start">
           <div>
             <p className="label" data-animate="fade">The Thesis</p>
             <h2 className="section-heading mt-4" data-animate="slide">
@@ -187,7 +192,7 @@ function HomePageContent({ locale }: { locale: Locale }) {
       <TrailDecoration variant={2} />
 
       {/* ── Core Ports ────────────────────────────────── */}
-      <section id="ports" className="mx-auto max-w-[1200px] px-6 py-28 lg:py-32">
+      <section id="ports" className="mx-auto max-w-[1200px] px-6 py-16 sm:py-20 lg:py-32">
         <p className="label" data-animate="fade">Network Nodes</p>
         <h2 className="section-heading mt-4 max-w-lg" data-animate="slide">
           <em>Core</em> Amazon {c.ports.title.split(" ").pop()}
@@ -219,6 +224,54 @@ function HomePageContent({ locale }: { locale: Locale }) {
 
       <TrailDecoration variant={3} />
 
+      {/* ── COP30 Alignment ────────────────────────────── */}
+      <section id="cop30" className="mx-auto max-w-[1200px] px-6 py-16 sm:py-20 lg:py-32">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.45fr_1fr] lg:items-start">
+          <div>
+            <p className="label" data-animate="fade">{c.cop30.eyebrow}</p>
+            <h2 className="section-heading mt-4" data-animate="slide">
+              <em>{c.cop30.title.split(" ").slice(0, 2).join(" ")}</em>{" "}
+              {c.cop30.title.split(" ").slice(2).join(" ")}
+            </h2>
+          </div>
+          <div>
+            <p className="text-[1.08rem] leading-[1.85] text-[var(--color-text-secondary)]">
+              {c.cop30.body}
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {c.cop30.pillars.map((pillar, i) => (
+            <article
+              key={i}
+              className="card group overflow-hidden p-6 transition-all duration-500"
+              data-animate="fade"
+            >
+              <div className="flex items-center gap-3">
+                <span className="rounded-md bg-[var(--color-pine)]/10 px-2.5 py-1 text-[0.52rem] font-bold uppercase tracking-[0.2em] text-[var(--color-pine)]">
+                  {pillar.tag}
+                </span>
+              </div>
+              <h3 className="mt-4 text-[0.95rem] font-semibold leading-tight text-[var(--color-text-primary)]">
+                {pillar.title}
+              </h3>
+              <p className="mt-3 text-[0.82rem] leading-relaxed text-[var(--color-text-secondary)]">
+                {pillar.desc}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <blockquote className="mx-auto mt-16 max-w-2xl border-l-2 border-[var(--color-pine)]/30 pl-6">
+          <p className="text-[0.95rem] font-light italic leading-relaxed text-[var(--color-text-secondary)]">
+            &ldquo;{c.cop30.quote}&rdquo;
+          </p>
+        </blockquote>
+      </section>
+
+      <TrailDecoration variant={1} />
+
       {/* ── Roadmap + Ideas ───────────────────────────── */}
       <div className="dark-section">
         <RoadmapIdeasSection
@@ -232,8 +285,8 @@ function HomePageContent({ locale }: { locale: Locale }) {
       <TrailDecoration variant={1} />
 
       {/* ── Chagra Framework ──────────────────────────── */}
-      <section className="mx-auto max-w-[1200px] px-6 py-28 lg:py-32">
-        <div className="grid gap-12 lg:grid-cols-[0.45fr_1fr] lg:items-start">
+      <section id="chagra" className="mx-auto max-w-[1200px] px-6 py-16 sm:py-20 lg:py-32">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.45fr_1fr] lg:items-start">
           <div>
             <p className="label" data-animate="fade">Design Framework</p>
             <h2 className="section-heading mt-4" data-animate="slide">
@@ -246,6 +299,8 @@ function HomePageContent({ locale }: { locale: Locale }) {
             </p>
           </div>
         </div>
+
+        <ChagraDiagram />
       </section>
 
       {/* ── Partners Carousel ─────────────────────────── */}
@@ -282,21 +337,19 @@ function HomePageContent({ locale }: { locale: Locale }) {
                 </p>
               </div>
               <div className="footer-col">
-                <a href="#ports" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
-                  Ports
-                </a>
-                <a href="#roadmap" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
-                  Roadmap
-                </a>
-                <a href="#ideas" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
-                  Ideas
-                </a>
-                <a href="#team" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
-                  Team
-                </a>
-                <a href="#contact" className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
-                  Contact
-                </a>
+                {[
+                  { label: "Ports", href: "#ports" },
+                  { label: "COP30", href: "#cop30" },
+                  { label: "Roadmap", href: "#roadmap" },
+                  { label: "Ideas", href: "#ideas" },
+                  { label: "Chagra", href: "#chagra" },
+                  { label: "Team", href: "#team" },
+                  { label: "Contact", href: "#contact" },
+                ].map((l) => (
+                  <a key={l.href} href={l.href} className="text-[0.65rem] font-medium tracking-[0.15em] text-white/60 transition-opacity hover:text-white/90">
+                    {l.label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

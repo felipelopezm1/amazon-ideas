@@ -384,6 +384,30 @@ h1, h2, h3, h4 {
   to   { stroke-dashoffset: 0; }
 }
 
+/* ── Chagra diagram animations ── */
+
+.chagra-edge {
+  animation: chagra-flow 2.4s linear infinite;
+}
+
+@keyframes chagra-flow {
+  from { stroke-dashoffset: 22; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.chagra-pulse-ring {
+  animation: chagra-ring-pulse 4s ease-in-out infinite;
+}
+
+.chagra-pulse-ring-slow {
+  animation: chagra-ring-pulse 5s ease-in-out infinite 1s;
+}
+
+@keyframes chagra-ring-pulse {
+  0%, 100% { opacity: 0.12; r: inherit; }
+  50%      { opacity: 0.25; }
+}
+
 /* ── Partners infinite scroll carousel ── */
 
 .partners-track {
@@ -605,4 +629,37 @@ footer .footer-col a:hover {
   left: 0;
   width: 100%;
   z-index: 10;
+}
+
+/* ── Mobile / responsive tweaks ──────────────────────────── */
+
+@media (max-width: 640px) {
+  .section-heading {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  footer {
+    min-height: 30vh;
+  }
+
+  footer .footer-container {
+    padding: 2rem 1rem 3rem;
+  }
+
+  footer .footer-row .footer-col:last-child {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-ghost {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.6rem;
+  }
 }

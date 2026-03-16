@@ -33,16 +33,16 @@ const team = [
 
 export default function TeamSection({ title, roles }: Props) {
   return (
-    <section id="team" className="mx-auto max-w-[1200px] px-6 py-32">
+    <section id="team" className="mx-auto max-w-[1200px] px-6 py-16 sm:py-20 lg:py-32">
       <p className="label">Leadership</p>
       <h2 className="section-heading mt-4">
         Meet the <em>Team</em>
       </h2>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] sm:mt-16 md:grid-cols-3">
         {team.map((m) => (
           <article key={m.name} className="group bg-[var(--color-cream)]">
-            <div className="relative h-72 overflow-hidden">
+            <div className="relative h-56 overflow-hidden sm:h-64 md:h-72">
               <Image
                 src={m.image}
                 alt={m.name}
