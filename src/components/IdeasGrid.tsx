@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
+import { useTransition } from "@/contexts/TransitionContext";
 
 type Idea = {
   id: string;
@@ -53,6 +54,7 @@ const FALLBACK_DETAILS = "More details coming soon. This project is currently be
 export default function IdeasGrid({ title, subtitle, ideas, locale, filters, selectedCity }: Props) {
   const [activeFilter, setActiveFilter] = useState<keyof FilterLabels>("all");
   const [selectedIdea, setSelectedIdea] = useState<Idea | null>(null);
+  const transition = useTransition();
 
   const visible = useMemo(() => {
     return ideas.filter((idea) => {
@@ -101,7 +103,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
                 className="dark-card font-stylish cursor-pointer p-6 transition-colors duration-300 hover:bg-white/[0.06]"
-                onClick={() => setSelectedIdea(idea)}
+                onClick={() => { transition?.playIn(); setSelectedIdea(idea); }}
               >
                 <div className="flex items-center justify-between">
                   <span className="rounded-full bg-white/6 px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.2em] text-white/35">
@@ -144,7 +146,7 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
           >
             <motion.div
               className="absolute inset-0 bg-[var(--color-dark)]/80 backdrop-blur-md"
-              onClick={() => setSelectedIdea(null)}
+              onClick={() => { transition?.playOut(); setSelectedIdea(null); }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -165,8 +167,8 @@ export default function IdeasGrid({ title, subtitle, ideas, locale, filters, sel
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f2520] via-[#0f2520]/40 to-transparent" />
                 <button
-                  onClick={() => setSelectedIdea(null)}
                   className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white/60 backdrop-blur-sm transition-colors hover:bg-black/50 hover:text-white"
+                  onClick={() => { transition?.playOut(); setSelectedIdea(null); }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M18 6L6 18M6 6l12 12" />

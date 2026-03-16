@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTransition } from "@/contexts/TransitionContext";
 import ContactModal from "./ContactModal";
 
 interface CTASectionProps {
@@ -17,9 +18,16 @@ export default function CTASection({
   secondaryLabel,
 }: CTASectionProps) {
   const [modal, setModal] = useState<"partner" | "resident" | null>(null);
+  const transition = useTransition();
 
-  const openModal = (type: "partner" | "resident") => setModal(type);
-  const closeModal = () => setModal(null);
+  const openModal = (type: "partner" | "resident") => {
+    transition?.playIn();
+    setModal(type);
+  };
+  const closeModal = () => {
+    transition?.playOut();
+    setModal(null);
+  };
 
   return (
     <section id="contact" className="mx-auto max-w-[1200px] px-4 pb-16 pt-4 sm:px-6 sm:pb-32 sm:pt-8">
